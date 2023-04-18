@@ -18,16 +18,9 @@ public:
 	virtual ~PauseState() {
 
 	}
-	void setLifes(int i) {
-		//health->setHealth(i);
-	}
-	void setFighterpos(Vector2D pos) {
-		//trans_player->setPos(pos);
-	}
-	//void handleEvents();
 
-	//void update();
-	//void render();
+	void server(int p);
+	void client(char* h, int p);
 
 };
 

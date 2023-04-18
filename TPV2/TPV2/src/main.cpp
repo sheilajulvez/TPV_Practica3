@@ -18,120 +18,72 @@ int main(int ac, char **av) {
 	//} catch (...) {
 	//	std::cerr << "Caught and exception of unknown type ...";
 	//}
-	//_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-	//Game::instance();
-	////Game::instance()->init();
-	//Game::instance()->run();
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+	Game::instance();
+	Game::instance()->init();
+	Game::instance()->run();
 	//Game::instance()->free();
-	//delete Game::instance();
+	delete Game::instance();
 	if (SDLNet_Init() < 0) {
 		//error();
 	}
 
 
 	
-	bool soyserver = true;
-	int port = 9999;
-	if (soyserver) {
-		IPaddress ip;
-		if (SDLNet_ResolveHost(&ip, nullptr, port) < 0) { //error(); 
-		}
-		TCPsocket masterSocket = SDLNet_TCP_Open(&ip);
-		if (!masterSocket) { //error(); 
-		}
-		SDLNet_SocketSet socketSet = SDLNet_AllocSocketSet(1);
-		SDLNet_TCP_AddSocket(socketSet, masterSocket);
-		while (true) {
+	//bool soyserver = true;
+	//int port = 9999;
+	//if (soyserver) {
+	//	IPaddress ip;
+	//	if (SDLNet_ResolveHost(&ip, nullptr, port) < 0) { //error(); 
+	//	}
+	//	TCPsocket masterSocket = SDLNet_TCP_Open(&ip);
+	//	if (!masterSocket) { //error(); 
+	//	}
+	//	SDLNet_SocketSet socketSet = SDLNet_AllocSocketSet(1);
+	//	SDLNet_TCP_AddSocket(socketSet, masterSocket);
+	//	while (true) {
 
-			if (SDLNet_CheckSockets(socketSet, SDL_MAX_UINT32) > 0) {
-				// TODO I: process connection request on masterSocket
-				char buffer[256];
-				int result = 0;
-				if (SDLNet_SocketReady(masterSocket)) {
-					TCPsocket client = SDLNet_TCP_Accept(masterSocket);
-					result = SDLNet_TCP_Recv(client, buffer, 255);
-					if (result > 0) {
-						cout << "Client says: " << buffer << endl;
-						SDLNet_TCP_Send(client, "Received!", 10);
-					}
-					SDLNet_TCP_Close(client);
-				}
+	//		if (SDLNet_CheckSockets(socketSet, SDL_MAX_UINT32) > 0) {
+	//			// TODO I: process connection request on masterSocket
+	//			char buffer[256];
+	//			int result = 0;
+	//			if (SDLNet_SocketReady(masterSocket)) {
+	//				TCPsocket client = SDLNet_TCP_Accept(masterSocket);
+	//				result = SDLNet_TCP_Recv(client, buffer, 255);
+	//				if (result > 0) {
+	//					cout << "Client says: " << buffer << endl;
+	//					SDLNet_TCP_Send(client, "Received!", 10);
+	//				}
+	//				SDLNet_TCP_Close(client);
+	//			}
 
-			}
+	//		}
 
-		}
-		SDLNet_FreeSocketSet(socketSet);
-		SDLNet_TCP_Close(masterSocket);
-	}
-	else {
-		//'10.8.117.53'
-		char buffer[256];
-		int result = 0;
-		IPaddress ip;
-		if (SDLNet_ResolveHost(&ip, "10.8.117.53", port) < 0) { //error(); 
-		}
-		TCPsocket client = SDLNet_TCP_Open(&ip);
-		if (!client) { //error(); 
-		}
-		result = SDLNet_TCP_Recv(client, buffer, 255);
-		if (result > 0) {
-			cout << "Server says: " << buffer << endl;
-			//SDLNet_TCP_Send(client, "Received!", 10);
-		}
-		// TODO: SEND MSG AND WAIT FOR RESPONSE
-		SDLNet_TCP_Close(client);
-	}
-	
+	//	}
+	//	SDLNet_FreeSocketSet(socketSet);
+	//	SDLNet_TCP_Close(masterSocket);
+	//}
+	//else {
+	//	//'10.8.117.53'
+	//	char buffer[256];
+	//	int result = 0;
+	//	IPaddress ip;
+	//	if (SDLNet_ResolveHost(&ip, "10.8.117.53", port) < 0) { //error(); 
+	//	}
+	//	TCPsocket client = SDLNet_TCP_Open(&ip);
+	//	if (!client) { //error(); 
+	//	}
+	//	result = SDLNet_TCP_Recv(client, buffer, 255);
+	//	if (result > 0) {
+	//		cout << "Server says: " << buffer << endl;
+	//		//SDLNet_TCP_Send(client, "Received!", 10);
+	//	}
+	//	// TODO: SEND MSG AND WAIT FOR RESPONSE
+	//	SDLNet_TCP_Close(client);
+	//}
+	//
 
 	SDLNet_Quit();
 	return 0;
-}
-// void server(int port) {
-//	IPaddress ip;
-//	if (SDLNet_ResolveHost(&ip, nullptr, port) < 0) { //error(); 
-//	}
-//	TCPsocket masterSocket = SDLNet_TCP_Open(&ip);
-//	if (!masterSocket) { //error(); 
-//	}
-//	SDLNet_SocketSet socketSet = SDLNet_AllocSocketSet(1);
-//	SDLNet_TCP_AddSocket(socketSet, masterSocket);
-//	while (true) {
-//		
-//		if (SDLNet_CheckSockets(socketSet, SDL_MAX_UINT32) > 0) {
-//			// TODO I: process connection request on masterSocket
-//			char buffer[256];
-//			int result = 0;
-//				if (SDLNet_SocketReady(masterSocket)) {
-//					TCPsocket client = SDLNet_TCP_Accept(masterSocket);
-//					result = SDLNet_TCP_Recv(client, buffer, 255);
-//					if (result > 0) {
-//						cout << "Client says: " << buffer << endl;
-//						SDLNet_TCP_Send(client, "Received!", 10);
-//					}
-//					SDLNet_TCP_Close(client);
-//				}
-//
-//		}
-//
-//	}
-//	SDLNet_FreeSocketSet(socketSet);
-//	SDLNet_TCP_Close(masterSocket);
-//}
-void client(char* host, int port) {
-	//char buffer[256];
-	//int result = 0;
-	//IPaddress ip;
-	//if (SDLNet_ResolveHost(&ip, "10.8.117.53", port) < 0) { //error(); 
-	//}
-	//TCPsocket client = SDLNet_TCP_Open(&ip);
-	//if (!client) { //error(); 
-	//}
-	//result = SDLNet_TCP_Recv(client, buffer, 255);
-	//if (result > 0) {
-	//	cout << "Server says: " << buffer << endl;
-	//	//SDLNet_TCP_Send(client, "Received!", 10);
-	//}
-	//// TODO: SEND MSG AND WAIT FOR RESPONSE
-	//SDLNet_TCP_Close(client);
 }
 
