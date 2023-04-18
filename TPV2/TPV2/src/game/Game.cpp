@@ -4,7 +4,7 @@
 
 //#include "states/TopDownState.h"
 
-Game::Game() {
+Game::Game(char* host, int port) {
 	SDLUtils::init("Oscar Te AMOO!",WIN_WIDTH,WIN_HEIGHT,
 		"resources/config/sdlutilsdemo.resources.json");
 	//instance();
@@ -12,6 +12,13 @@ Game::Game() {
 	window = SDLUtils::instance()->window();
 	exit = false;
 	gameStMc = GameStateMachine::instance();
+	calcetin =  SDLNet_UDP_Open(0);
+
+	if (SDLNet_ResolveHost(&srvadd, host, port) < 0) {
+		throw("ERROR AL ESTABLECER CONEXION CON EL SERVIDOR");
+		//error(); 
+	}
+	p = SDLNet_AllocPacket(MAX_PACKET_SIZE);
 	gameStMc->init();
 	
 }
@@ -33,11 +40,25 @@ void Game::run()// bucle de juego
 {
 	uint32_t startTime, frameTime;
 	startTime = SDL_GetTicks();
+	
 	while (!exit) // bucle de juego
 	{
 		//SDL_RenderClear(renderer);
 
 		//handleEvents();
+		cout << "Enter a message: ";
+		cin.getline(buffer, 255);
+		if (strcmp(buffer, "exit") == 0) { break; }
+		p->len = static_cast<int>(strlen(buffer)) + 1;
+		p->address = srvadd;
+		SDLNet_UDP_Send(sd, -1, p);
+		if (SDLNet_CheckSockets(socketSet, 3000) > 0) {
+			if (SDLNet_SocketReady(sd)) {
+				while (SDLNet_UDP_Recv(sd, p) > 0) {
+					cout << "Server says: " << buffer << endl;
+				}
+			}
+		}
 
 		frameTime = SDL_GetTicks() - startTime;
 		if (frameTime >= FRAME_RATE)

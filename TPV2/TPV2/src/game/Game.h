@@ -1,5 +1,6 @@
 #include "../sdlutils/SDLUtils.h"
 #include "../utils/checkML.h"
+#include <SDL_net.h>
 
 #pragma once
 using namespace std;
@@ -14,13 +15,14 @@ private:
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer = nullptr;
 	GameStateMachine* gameStMc=nullptr;
-
+	UDPpacket* p;
+	UDPsocket calcetin;
 	bool exit;
 
 public:
 
 	virtual ~Game();
-	Game();
+	Game(char* host,int port);
 	void handleEvents();
 	void render();
 	void update();

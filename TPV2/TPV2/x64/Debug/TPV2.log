@@ -1,2 +1,107 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(503,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
-  TPV2.vcxproj -> C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\bin\TPV2Debug.exe
+  Manager.cpp
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(8,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(9,25): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\components\Transform.h(15,8): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+  Game.cpp
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(8,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(9,25): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\components\Transform.h(15,8): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Game.cpp(17,26): error C2065: 'srvadd': identificador no declarado
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Game.cpp(50,15): error C2065: 'buffer': identificador no declarado
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Game.cpp(51,14): error C2065: 'buffer': identificador no declarado
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Game.cpp(52,36): error C2065: 'buffer': identificador no declarado
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Game.cpp(53,16): error C2065: 'srvadd': identificador no declarado
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Game.cpp(54,19): error C2065: 'sd': identificador no declarado
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Game.cpp(55,27): error C2065: 'socketSet': identificador no declarado
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Game.cpp(56,8): error C2065: 'sd': identificador no declarado
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Game.cpp(57,28): error C2065: 'sd': identificador no declarado
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Game.cpp(58,33): error C2065: 'buffer': identificador no declarado
+  main.cpp
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(8,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(9,25): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\utils\Singleton.h(57,24): error C2512: 'Game::Game': no hay disponible un constructor predeterminado adecuado
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\utils\Singleton.h(57,24): message : al hacer coincidir la lista de argumentos '()'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\main.cpp(147,25): message : Vea la referencia a la creación de una instancia de la función plantilla "T *Singleton<T>::init<>(void)" que se está compilando
+          with
+          [
+              T=Game
+          ]
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\main.cpp(147,24): message : Vea la referencia a la creación de una instancia de la función plantilla "T *Singleton<T>::init<>(void)" que se está compilando
+          with
+          [
+              T=Game
+          ]
+  GameOverState.cpp
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(8,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(9,25): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\components\Transform.h(15,8): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\FighterSystem.h(38,49): warning C4244: 'inicializando': conversión de 'Uint32' a 'float'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(50,32): warning C4101: 'e': variable local sin referencia
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(47,1): message : al compilar la función del miembro clase plantilla "SoundEffect &SDLUtils::map_access_wrapper<SoundEffect>::at(std::string)"
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(194,34): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<SoundEffect>" que se está compilando
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\states\GameOverState.cpp(21,12): warning C4101: 'event': variable local sin referencia
+  PauseState.cpp
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(8,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(9,25): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\components\Transform.h(15,8): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\FighterSystem.h(38,49): warning C4244: 'inicializando': conversión de 'Uint32' a 'float'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(50,32): warning C4101: 'e': variable local sin referencia
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(47,1): message : al compilar la función del miembro clase plantilla "SoundEffect &SDLUtils::map_access_wrapper<SoundEffect>::at(std::string)"
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(194,34): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<SoundEffect>" que se está compilando
+  PlayState.cpp
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(8,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(9,25): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\components\Transform.h(15,8): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\FighterSystem.h(38,49): warning C4244: 'inicializando': conversión de 'Uint32' a 'float'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(50,32): warning C4101: 'e': variable local sin referencia
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(47,1): message : al compilar la función del miembro clase plantilla "SoundEffect &SDLUtils::map_access_wrapper<SoundEffect>::at(std::string)"
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(194,34): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<SoundEffect>" que se está compilando
+  WinState.cpp
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(8,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(9,25): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\components\Transform.h(15,8): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\FighterSystem.h(38,49): warning C4244: 'inicializando': conversión de 'Uint32' a 'float'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(50,32): warning C4101: 'e': variable local sin referencia
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(47,1): message : al compilar la función del miembro clase plantilla "SoundEffect &SDLUtils::map_access_wrapper<SoundEffect>::at(std::string)"
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(194,34): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<SoundEffect>" que se está compilando
+  GameControlSystem.cpp
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(8,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(9,25): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\components\Transform.h(15,8): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\FighterSystem.h(38,49): warning C4244: 'inicializando': conversión de 'Uint32' a 'float'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(50,32): warning C4101: 'e': variable local sin referencia
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(47,1): message : al compilar la función del miembro clase plantilla "SoundEffect &SDLUtils::map_access_wrapper<SoundEffect>::at(std::string)"
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(194,34): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<SoundEffect>" que se está compilando
+  GameStateMachine.cpp
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(8,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(9,25): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\components\Transform.h(15,8): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\FighterSystem.h(38,49): warning C4244: 'inicializando': conversión de 'Uint32' a 'float'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(50,32): warning C4101: 'e': variable local sin referencia
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(47,1): message : al compilar la función del miembro clase plantilla "SoundEffect &SDLUtils::map_access_wrapper<SoundEffect>::at(std::string)"
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(194,34): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<SoundEffect>" que se está compilando
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\utils\Singleton.h(57,24): error C2512: 'Game::Game': no hay disponible un constructor predeterminado adecuado
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\utils\Singleton.h(57,24): message : al hacer coincidir la lista de argumentos '()'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\utils\Singleton.h(75,1): message : Vea la referencia a la creación de una instancia de la función plantilla "T *Singleton<T>::init<>(void)" que se está compilando
+          with
+          [
+              T=Game
+          ]
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\utils\Singleton.h(75,8): message : Vea la referencia a la creación de una instancia de la función plantilla "T *Singleton<T>::init<>(void)" que se está compilando
+          with
+          [
+              T=Game
+          ]
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\utils\Singleton.h(70,1): message : al compilar la función del miembro clase plantilla "T *Singleton<T>::instance(void)"
+          with
+          [
+              T=Game
+          ]
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\utils\GameStateMachine.cpp(69,25): message : Vea la referencia a la creación de una instancia de la función plantilla "T *Singleton<T>::instance(void)" que se está compilando
+          with
+          [
+              T=Game
+          ]
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Game.h(13,1): message : Vea la referencia a la creación de una instancia de clase plantilla "Singleton<Game>" que se está compilando
+  Generando código...

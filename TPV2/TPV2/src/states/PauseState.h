@@ -19,8 +19,7 @@ public:
 
 	}
 
-	void server(int p);
-	void client(char* h, int p);
+
 
 };
 

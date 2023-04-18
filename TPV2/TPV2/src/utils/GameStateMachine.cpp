@@ -4,6 +4,7 @@
 #include "../states/GameOverState.h"
 #include "../states/WinState.h"
 #include "../sdlutils/SDLUtils.h"
+#include "../states/MainMenuState.h"
 
 
 GameStateMachine::GameStateMachine() {
@@ -26,8 +27,9 @@ GameStateMachine::~GameStateMachine() {
 }
 
  void GameStateMachine::init() {
-	pushState(new PlayState(this));
-	pushState(new PauseState(this));
+	/*pushState(new PlayState(this));
+	pushState(new PauseState(this));*/
+	 pushState(new MainMenuState(this));
 }
 
 Manager* GameStateMachine::currentState() const {
