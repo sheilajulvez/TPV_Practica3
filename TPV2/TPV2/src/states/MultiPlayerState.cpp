@@ -21,8 +21,9 @@ MultiPlayerState::MultiPlayerState(GameStateMachine* g) {
         server(PORT);
         isserver = true;
         fightersystem = addSystem<FighterSystem>();
+        rendersystem = addSystem<RenderSystem>(1);
         fightersystem->initSystem();
-        
+        rendersystem->initSystem();
     }
     else {
         // Pregunta por la IP
