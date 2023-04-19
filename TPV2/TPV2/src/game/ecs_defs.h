@@ -70,6 +70,7 @@ constexpr msgId_type maxMessageId = _LAST_MSG_ID;
 
 enum hdlrsId : hdlrId_type {
 	_HDLR_FIGHTER,
+	_HDLR_NETFIGHTER_2,
 	// do not remove this
 	_LAST_HDLR_ID
 };

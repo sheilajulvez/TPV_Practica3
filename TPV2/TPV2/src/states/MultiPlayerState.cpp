@@ -2,7 +2,12 @@
 
 MultiPlayerState::MultiPlayerState(GameStateMachine* g) {
 
+    fightersystem = addSystem<FighterSystem>();
+    rendersystem = addSystem<RenderSystem>(1);
+    fightersystem2= addSystem<FighterSystem>();
+    fightersystem2->initSystem();
     
+    setHandler(_HDLR_NETFIGHTER_2, fightersystem->getPlayer());
 	gsm = g;
     if (SDL_Init(0) == -1) {
         printf("SDL_Init: %s\n", SDL_GetError());
@@ -20,10 +25,7 @@ MultiPlayerState::MultiPlayerState(GameStateMachine* g) {
     if (a == "1") {
         server(PORT);
         isserver = true;
-        fightersystem = addSystem<FighterSystem>();
-        rendersystem = addSystem<RenderSystem>(1);
-        fightersystem->initSystem();
-        rendersystem->initSystem();
+    
     }
     else {
         // Pregunta por la IP
@@ -72,6 +74,7 @@ void MultiPlayerState::client(char* host, int port) {
     socketSet = SDLNet_AllocSocketSet(1);
     SDLNet_UDP_AddSocket(socketSet, sd);
 }
+
  MultiPlayerState::~MultiPlayerState() {
      // ESTO DE AQUI DEBE LLAMARSE EN LA DESTRUCTORA DEL JUEGO
    // libera 
@@ -101,8 +104,6 @@ void MultiPlayerState::update() {
             }
         }
     }
-
-   
     // MODIFICAR ESTE CODIGO PARA QUE SEA NUESTRO JUEGO
     else {
         // TODO I: PROCESS DATA on socket sd

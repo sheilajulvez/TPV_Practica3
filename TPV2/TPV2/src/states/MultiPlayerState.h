@@ -18,7 +18,7 @@ private:
 	FighterSystem* fightersystem;
 	Vector2D trans;
 	RenderSystem* rendersystem;
-
+	FighterSystem* fightersystem2;
 public:
 	MultiPlayerState(GameStateMachine* g);
 	virtual ~MultiPlayerState();
