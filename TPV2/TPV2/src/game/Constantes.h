@@ -11,6 +11,8 @@
 	const int AST_H = 500;
 	const int AST_F = 6;
 	const int AST_C = 5;
+	const int PORT = 9999;
+	const int MAX_PACKET_SIZE = 512;
 
 
 
