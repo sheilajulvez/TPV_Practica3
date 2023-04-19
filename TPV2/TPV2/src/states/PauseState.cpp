@@ -1,7 +1,7 @@
 #include "PauseState.h"
 #include "PlayState.h"
 #include "../utils/GameStateMachine.h"
-#include <SDL_net.h>
+
 #include "../sdlutils/SDLUtils.h"
 #include "../game/ecs_defs.h"
 
@@ -17,10 +17,8 @@ PauseState::PauseState(GameStateMachine* gsm) {
 	rendersystem->setContext(this);
 	gamecontrolsystem->setContext(this);
 
-   
+
 }
-
-
 
 //void PauseState::render() {
 //	Manager::render();

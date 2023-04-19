@@ -35,8 +35,10 @@ private:
 	// onRoundStart, y en update no hacer nada si no está activo)
 	bool active_;
 
-	
+	int A_fils = 6;
+	int A_cols = 5;
 	RandomNumberGenerator* random;
+	int frequency = 5000;
 	int  frames = 50;
 	int start_t = 0;
 	int framed_time = 0;

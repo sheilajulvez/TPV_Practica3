@@ -1,21 +1,19 @@
 #pragma once
 #include "../ecs/Manager.h"
-#include "../sdlutils/InputHandler.h"
-#include "../sdlutils/Font.h"
-#include "../game/Constantes.h"
-#include "../sdlutils/SDLUtils.h"
 #include "../utils/GameStateMachine.h"
-
-class MainMenuState: public Manager
+#include "../sdlutils/Font.h"
+#include "../sdlutils/SDLUtils.h"
+class MainMenuState:public Manager
 {
-protected:
-	Font* f= &SDLUtils::instance()->fonts().at("ARIAL16");
-	SDL_Color c = { 255,255,0 };
+private:
 	GameStateMachine* g;
+	Font* f = &SDLUtils::instance()->fonts().at("ARIAL16");
 public:
-	MainMenuState(GameStateMachine* gs);
-	~MainMenuState();
+	MainMenuState(GameStateMachine* g);
+	virtual ~MainMenuState();
 	void update();
+
+
 
 };
 

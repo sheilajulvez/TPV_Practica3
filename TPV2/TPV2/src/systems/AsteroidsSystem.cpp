@@ -3,7 +3,7 @@
 #include "../components/Generations.h"
 #include "../components/Follow.h"
 #include "../components/FramedImage.h"
-// Reaccionar 4 los mensajes recibidos (llamando a métodos correspondientes).
+// Reaccionar a los mensajes recibidos (llamando a métodos correspondientes).
 void AsteroidsSystem :: receive(const Message& m) {
 	switch (m.id)
 	{
@@ -85,7 +85,7 @@ void AsteroidsSystem::onCollision_AsteroidBullet(Entity* a) {
 	mngr_->setAlive(a, false);
 	int size = mngr_->getComponent<Generations>(a)->getState();
 	Transform* t = mngr_->getComponent<Transform>(a);
-	if ((size == 3 || size == 2) && numOfAsteroids_ < AST_TOTAL) {
+	if ((size == 3 || size == 2) && numOfAsteroids_ < 30) {
 		createone(t->getW(), t->getH(), size - 1, a);
 		if (numOfAsteroids_ < 29) {
 			createone(t->getW(), t->getH(), size - 1, a);
@@ -126,7 +126,7 @@ void  AsteroidsSystem::createone(int w, int h, int size, Entity* father) {
 
 	mngr_->addComponent<Transform>(asteroid, pos, vel, width, height);
 	mngr_->addComponent<Generations>(asteroid, size);
-	mngr_->addComponent<FramedImage>(asteroid, AST_F, AST_C, t_asteroid);
+	mngr_->addComponent<FramedImage>(asteroid, A_fils, A_cols, t_asteroid);
 	numOfAsteroids_++;
 
 }
@@ -205,7 +205,7 @@ void AsteroidsSystem::createAsteroids(int n) {
 
 		mngr_->addComponent<Transform>(asteroid, pos, velocity, wi, he);
 		mngr_->addComponent<Generations>(asteroid, r);
-		mngr_->addComponent<FramedImage>(asteroid, AST_F, AST_C, t_asteroid);
+		mngr_->addComponent<FramedImage>(asteroid, A_fils, A_cols, t_asteroid);
 
 		numOfAsteroids_++;
 	}
