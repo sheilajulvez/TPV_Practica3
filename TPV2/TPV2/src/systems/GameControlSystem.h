@@ -5,7 +5,7 @@ class GameStateMachine;
 class GameCtrlSystem : public System {
 public:
 	GameCtrlSystem(GameStateMachine* gsm) { this->gsm = gsm;};
-	constexpr static cmpId_type id = _sys_GAMECTRL;
+	constexpr static  sysId_type id = _sys_GAMECTRL;
 	// Reaccionar a los mensajes recibidos (llamando a métodos correspondientes).
 	void receive(const Message& m) override;
 	// Inicializar el sistema, etc.

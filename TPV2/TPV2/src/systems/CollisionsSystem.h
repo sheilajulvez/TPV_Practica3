@@ -8,7 +8,7 @@
 
 class CollisionsSystem : public System {
 public:
-	constexpr static cmpId_type id = _sys_COLLISIONS;
+	constexpr static  sysId_type id = _sys_COLLISIONS;
 	// Reaccionar a los mensajes recibidos (llamando a métodos correspondientes).
 	void receive(const Message& m) override;
 	// Inicializar el sistema, etc.

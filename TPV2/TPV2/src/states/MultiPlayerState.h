@@ -4,6 +4,7 @@
 #include <SDL_net.h>
 #include "../systems/FighterSystem.h"
 #include "../systems/RenderSystem.h"
+#include "../systems/NETSystem.h"
 class MultiPlayerState:public Manager
 {
 
@@ -18,13 +19,12 @@ private:
 	FighterSystem* fightersystem;
 	Vector2D trans;
 	RenderSystem* rendersystem;
-	FighterSystem* fightersystem2;
+	NETSystem* netsystem;
 public:
 	MultiPlayerState(GameStateMachine* g);
 	virtual ~MultiPlayerState();
-	void server(int port);
-	void client(char* host, int port);
-	void update();
+	
+	
 
 
 

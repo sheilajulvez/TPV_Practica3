@@ -7,11 +7,11 @@
 #include "../ecs/Entity.h"
 #include "../sdlutils/InputHandler.h"
 #include "../sdlutils/SoundEffect.h"
-
+#include "../systems/NETSystem.h"
 
 class FighterSystem: public System {
 public:
-	constexpr static cmpId_type id = _sys_FIGHTER;
+	constexpr static  sysId_type id = _sys_FIGHTER;
 	// Reaccionar a los mensajes recibidos (llamando a métodos correspondientes).
 	void receive(const Message& m) override;
 	// Crear la entidad del caza, añadir sus componentes, asociarla con un handler
@@ -22,10 +22,15 @@ public:
 	// si el juego no está parado y el jugador pulsa la tecla de disparo, enviar un
 	// mensaje con las características físicas de la bala. Recuerda que se puede disparar
 	// sólo una bala cada 0.25sec.
+	void move(Entity* f);
 	void update() override;
-	Entity* getPlayer() {
+	inline Entity* getPlayer() {
 		return fighter;
 	}
+	inline Entity* getPlayer2() {
+		return fighter2;
+	}
+	void SetTrans(int id);
 private:
 	// Para reaccionar al mensaje de que ha habido un choque entre el fighter y un
 	// un asteroide. Poner el caza en el centro con velocidad (0,0) y rotación 0. No
@@ -42,7 +47,12 @@ private:
 	bool active_;
 	float totaltime, start= sdlutils().currRealTime(), frames;
 	Entity* fighter;
+	Entity* fighter2;
 	Transform* trans_player;
+	Transform* t1;
+	Transform* t2;
+	NETSystem* netsystem;
+
 	SoundEffect* thrust = &SDLUtils::instance()->soundEffects().at("thrust");
 	SoundEffect* Pium = &SDLUtils::instance()->soundEffects().at("fire");
 	

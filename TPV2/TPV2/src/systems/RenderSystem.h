@@ -5,7 +5,7 @@
 class RenderSystem : public System {
 public:
 	RenderSystem(int state_);
-	constexpr static cmpId_type id = _sys_RENDER;
+	constexpr static sysId_type id = _sys_RENDER;
 	// Reaccionar a los mensajes recibidos (llamando a métodos correspondientes).
 	void receive(const Message& m) override;
 	// Inicializar el sistema, etc.
@@ -31,5 +31,9 @@ private:
 	Texture* bullet_texture;
 	Font* f;
 	SDL_Renderer* renderer;
+	SDL_Rect dest;
+	SDL_Rect health;
+	Transform* trans;
+	int n_health;
 	
 };

@@ -9,6 +9,7 @@ using grpId_type = int;
 using sysId_type = int;
 using msgId_type = int;
 using hdlrId_type = int;
+using NETmsgId_type = int;
 enum cmpId : cmpId_type {
 	_TRANSFORM_H_ = 0,
 	_DEACELERATION_H_ = 1,
@@ -45,6 +46,7 @@ enum sysId : sysId_type {
 	_sys_FIGHTER=3,
 	_sys_COLLISIONS=4,
 	_sys_RENDER=5,
+	_sys_NET=6,
 	// do not remove this
 	_LAST_SYS_ID
 };
@@ -74,8 +76,13 @@ enum hdlrsId : hdlrId_type {
 	// do not remove this
 	_LAST_HDLR_ID
 };
-constexpr msgId_type maxHandlerId = _LAST_HDLR_ID;
+constexpr hdlrId_type maxHandlerId = _LAST_HDLR_ID;
 
+enum NETmsgId : NETmsgId_type {
+	_FighterPositionMessage_=1,
 
+	_LAST_NETMSG_ID
+};
+constexpr  NETmsgId_type maxNETmsgId = _LAST_NETMSG_ID;
 
 #endif // !ECS_H_

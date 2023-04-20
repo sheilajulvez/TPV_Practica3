@@ -24,10 +24,7 @@ void RenderSystem::receive(const Message& m) {
 	case M_ROUND_START:
 		onRoundStart();
 		break;
-
 	}
-
-
 }
 // Inicializar el sistema, etc.
 void RenderSystem::initSystem() {
@@ -46,24 +43,38 @@ void RenderSystem::initSystem() {
 void RenderSystem::update() {
 	//Pause=0, Play=1, Win=2, GameOver=34
 	SDL_RenderClear(renderer);
-	Transform* trans= mngr_->getComponent<Transform>(mngr_->getHandler(_HDLR_FIGHTER));
+	trans= mngr_->getComponent<Transform>(mngr_->getHandler(_HDLR_FIGHTER));
 
-	SDL_Rect dest;
 	dest.x = trans->getPos().getX();
 	dest.y = trans->getPos().getY();
 	dest.w = trans->getW();		
 	dest.h = trans->getH();
 	fighter_texture->render(dest, trans->getR());
 
-	SDL_Rect health;
-
-	int n_health = mngr_->getComponent<Health>(mngr_->getHandler(_HDLR_FIGHTER))->GetHealth();
+	n_health = mngr_->getComponent<Health>(mngr_->getHandler(_HDLR_FIGHTER))->GetHealth();
 	for (int i = 0; i < n_health; ++i) {
 		health.x = i * (HEALTH_W + HEALTH_X);
 		health.y = HEALTH_Y;
 		health.w = HEALTH_W;
 		health.h = HEALTH_H;
 		health_texture->render(health,0);
+	}
+
+	trans = mngr_->getComponent<Transform>(mngr_->getHandler(_HDLR_NETFIGHTER_2));
+
+	dest.x = trans->getPos().getX();
+	dest.y = trans->getPos().getY();
+	dest.w = trans->getW();
+	dest.h = trans->getH();
+	fighter_texture->render(dest, trans->getR());
+
+	n_health = mngr_->getComponent<Health>(mngr_->getHandler(_HDLR_NETFIGHTER_2))->GetHealth();
+	for (int i = 0; i < n_health; ++i) {
+		health.x = i * (HEALTH_W + HEALTH_X);
+		health.y = HEALTH_Y;
+		health.w = HEALTH_W;
+		health.h = HEALTH_H;
+		health_texture->render(health, 0);
 	}
 	
 	if (state_ == 1) {

@@ -19,6 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\ecs\NETMessage.h" />
+    <ClInclude Include="src\systems\NETSystem.h" />
     <ClInclude Include="src\states\MultiPlayerState.h" />
     <ClInclude Include="src\states\MainMenuState.h" />
     <ClInclude Include="src\components\DeAcceleration.h" />
@@ -71,6 +73,8 @@
     <ClInclude Include="src\utils\Vector2D.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ecs\NETMessage.cpp" />
+    <ClCompile Include="src\systems\NETSystem.cpp" />
     <ClCompile Include="src\states\MultiPlayerState.cpp" />
     <ClCompile Include="src\states\MainMenuState.cpp" />
     <ClCompile Include="src\components\DeAcceleration.cpp" />

@@ -17,14 +17,29 @@ void FighterSystem::receive(const Message& m) {
 // Crear la entidad del caza, añadir sus componentes, asociarla con un handler
 // correspondiente, etc.
 void FighterSystem::initSystem() {
+	netsystem = mngr_->getSystem<NETSystem>();
+	if (netsystem!=nullptr) {
+		fighter2 = mngr_->addEntity(_grp_GENERAL);
+		mngr_->setHandler(_HDLR_NETFIGHTER_2, fighter2);
+		t2 = mngr_->addComponent<Transform>(fighter2);
+		t2->setPos(POS2);
+		t2->setW(PWIDTH);
+		t2->setH(PHEIGHT);
+
+		mngr_->addComponent<Health>(fighter2);
+	}
 	fighter = mngr_->addEntity(_grp_GENERAL);
 	mngr_->setHandler(_HDLR_FIGHTER, fighter);
-	trans_player=mngr_->addComponent<Transform>(fighter);
+	t1=mngr_->addComponent<Transform>(fighter);
 	mngr_->addComponent<Health>(fighter);
+
+	
+	t1->setPos(POS1);
+	t1->setW(PWIDTH);
+	t1->setH(PHEIGHT);
+
 	//mngr_->addComponent<Image>(fighter);
-	trans_player->setH(50);
-	trans_player->setW(50);
-	trans_player->setPos({ WIN_WIDTH / 2, WIN_HEIGHT / 2 });
+	
 
 }
 // Si el juego está parado no hacer nada, en otro caso actualizar la velocidad
@@ -32,8 +47,31 @@ void FighterSystem::initSystem() {
 // si el juego no está parado y el jugador pulsa la tecla de disparo, enviar un
 // mensaje con las características físicas de la bala. Recuerda que se puede disparar
 // sólo una bala cada 0.25sec.
-void FighterSystem::update() {
 
+void FighterSystem::update() {
+	
+	if (netsystem != nullptr) {
+		Uint8 myId = netsystem->getID();
+		if (myId == 0)
+			move(fighter);
+		else
+			move(fighter2);
+	}
+	else {
+		move(fighter);
+	}
+	
+}
+
+void FighterSystem::SetTrans(int id) {
+	if (id == 0)
+		move(fighter);
+	else
+		move(fighter2);
+}
+void FighterSystem::move(Entity* f) {
+	
+	trans_player = mngr_->getComponent<Transform>(f);
 	if (active_) {
 		SDL_Event event_;
 
@@ -101,6 +139,10 @@ void FighterSystem::update() {
 			trans_player->setPos({ trans_player->getPos().getX(), WIN_HEIGHT });
 		}
 		trans_player->setPos(trans_player->getPos() + trans_player->getVel());
+
+		if (netsystem != nullptr) {
+			mngr_->getSystem<NETSystem>()->SendFighterPosition(trans_player->getPos(), trans_player->getR());
+		}
 
 	}
 		
