@@ -6,6 +6,7 @@ class NETSystem:public System
 {
 private:
 	char* host;
+	int port;
 	bool isserver;
 	UDPsocket sd;
 	UDPpacket* p;
