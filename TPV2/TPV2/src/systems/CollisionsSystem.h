@@ -5,7 +5,7 @@
 #include "../ecs/Entity.h"
 #include "../components/Health.h"
 #include "../sdlutils/SoundEffect.h"
-
+#include "NETSystem.h"
 class CollisionsSystem : public System {
 public:
 	constexpr static  sysId_type id = _sys_COLLISIONS;
@@ -26,10 +26,14 @@ private:
 	bool active_;
 	Transform* trans_asteroid;
 	Entity* fighter;
+	Entity* fighter2;
 	Transform* trans_player;
+	Transform* trans_player2;
 	Health* health;
+	Health* health2;
 	Transform* trans_bullet;
 	SoundEffect* crash;
 	SoundEffect* bullet_asteroid;
+	NETSystem* netsystem;
 
 };
