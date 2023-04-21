@@ -80,6 +80,7 @@ constexpr hdlrId_type maxHandlerId = _LAST_HDLR_ID;
 
 enum NETmsgId : NETmsgId_type {
 	_FighterPositionMessage_=1,
+	_I_WANT_TO_PLAY=2,
 
 	_LAST_NETMSG_ID
 };

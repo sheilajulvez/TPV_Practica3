@@ -44,6 +44,7 @@ void NETSystem::server(int port) {
         throw("ERROR AL ABRIR EL SERVER");
         //error(); 
     }
+<<<<<<< Updated upstream
 
     // creacion de un packet (estructura de datos a enviar/recibir)
     p = SDLNet_AllocPacket(MAX_PACKET_SIZE);
@@ -56,6 +57,12 @@ void NETSystem::server(int port) {
     message = reinterpret_cast<NETMessage*>(p->data);
     socketSet = SDLNet_AllocSocketSet(1);
     SDLNet_UDP_AddSocket(socketSet, sd);
+=======
+    SDLNet_ResolveHost(&srvadd, "192.168.1.147", port);
+   
+   /* socketSet = SDLNet_AllocSocketSet(1);
+    SDLNet_UDP_AddSocket(socketSet, sd);*/
+>>>>>>> Stashed changes
 
 }
 void NETSystem::client(char* host, int port) {
@@ -70,12 +77,34 @@ void NETSystem::client(char* host, int port) {
 
     socketSet = SDLNet_AllocSocketSet(1);
     SDLNet_UDP_AddSocket(socketSet, sd);
+<<<<<<< Updated upstream
+=======
+
+    PlayRequestMsg* m = static_cast<PlayRequestMsg*>(message);
+    m->type = _I_WANT_TO_PLAY;
+    p->len = sizeof(PlayRequestMsg);
+    p->address = srvadd;
+    SDLNet_UDP_Send(sd, -1, p);
+   
+
+    // free the socket set, won't be used anymore
+   // SDLNet_FreeSocketSet(socketSet);
+>>>>>>> Stashed changes
 }
 
 void NETSystem::update() {
     while (SDLNet_UDP_Recv(sd, p) > 0) {
 
         switch (message->type) {
+
+        case _I_WANT_TO_PLAY: {
+            // we accept the connection if the player is the master, and no other player is connected
+            if (isserver) {
+                PlayRequestMsg* m = static_cast<PlayRequestMsg*>(message);
+                srvadd = p->address;
+            }
+            break;
+        }
         case _FighterPositionMessage_:
 
             FighterPositionMessage* m = static_cast<FighterPositionMessage*>(message);
