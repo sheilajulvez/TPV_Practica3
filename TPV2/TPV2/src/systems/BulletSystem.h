@@ -1,6 +1,7 @@
 #pragma once
 #include "../ecs/System.h"
 #include "../utils/Vector2D.h"
+#include "NETSystem.h"
 
 class BulletsSystem: public System {
 public:
@@ -12,6 +13,7 @@ public:
 		// Si el juego está parado no hacer nada, en otro caso mover las balas y
 		// desactivar las que salen de la ventana como en la práctica 1.
 	void update() override;
+	void createBullet(Vector2D pos, Vector2D vel, float r);
 private:
 	// Para gestionar el mensaje de que el jugador ha disparado. Añadir una bala al
 	// juego, como en la práctica 1. Recuerda que la rotación de la bala sería
@@ -28,4 +30,6 @@ private:
 		// Indica si el sistema está activo o no (modificar el valor en onRoundOver y
 		// onRoundStart, y en update no hacer nada si no está activo)
 		bool active_;
+		NETSystem* netsystem;
+		Transform* trans;
 };

@@ -1,5 +1,6 @@
 #include "BulletSystem.h"
 #include "../ecs/Manager.h"
+#include "NETSystem.h"
 
 // Reaccionar a los mensajes recibidos (llamando a métodos correspondientes).
 void BulletsSystem::receive(const Message& m) {
@@ -23,6 +24,7 @@ void BulletsSystem::receive(const Message& m) {
 }
 // Inicializar el sistema, etc.
 void BulletsSystem::initSystem() {
+	netsystem = mngr_->getSystem<NETSystem>();
 
 }
 // Si el juego está parado no hacer nada, en otro caso mover las balas y
@@ -50,13 +52,18 @@ void BulletsSystem::update() {
 	// vel.angle(Vector2D(0.0f,-1.0f))
 void BulletsSystem::shoot(Vector2D pos, Vector2D vel, double width, double height,double rotation) {
 	Entity* bullet = mngr_->addEntity(_grp_BULLET);
-	Transform* trans_player = mngr_->getComponent<Transform>(mngr_->getHandler(_HDLR_FIGHTER));
-	Texture* t = &SDLUtils::instance()->images().at("bullet");
-
-	mngr_->addComponent<Transform>(bullet, pos, vel, width, height, rotation);
+	trans=mngr_->addComponent<Transform>(bullet, pos, vel, width, height, rotation);
+	if (netsystem != nullptr) {
+		mngr_->getSystem<NETSystem>()->SendBulletSpawn(trans->getPos(), trans->getVel(), trans->getR());
+	}
 	//mngr_->addComponent<Image>(bullet, t);
 
 
+}
+
+void BulletsSystem::createBullet(Vector2D pos, Vector2D vel, float r) {
+	Entity* bullet = mngr_->addEntity(_grp_BULLET);
+	trans = mngr_->addComponent<Transform>(bullet, pos, vel, B_W, B_H, r);
 }
 // Para gestionar el mensaje de que ha habido un choque entre una bala y un
 // asteroide. Desactivar la bala “b”.

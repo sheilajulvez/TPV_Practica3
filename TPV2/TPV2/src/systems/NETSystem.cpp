@@ -1,6 +1,7 @@
 #include "NETSystem.h"
 #include "../ecs/Manager.h"
 #include "FighterSystem.h"
+#include "BulletSystem.h"
 NETSystem::NETSystem() {
     isserver = false;
 
@@ -31,8 +32,6 @@ void NETSystem::initSystem() {
         cin >> host;
         isserver = false;
         client(host, PORT);
-        
-
     }
 }
 
@@ -78,8 +77,6 @@ void NETSystem::client(char* host, int port) {
     socketSet = SDLNet_AllocSocketSet(1);
     SDLNet_UDP_AddSocket(socketSet, sd);
 
-
-
     PlayRequestMsg* m = static_cast<PlayRequestMsg*>(message);
     m->type = _I_WANT_TO_PLAY;
     p->len = sizeof(PlayRequestMsg);
@@ -97,34 +94,31 @@ void NETSystem::update() {
 
         switch (message->type) {
 
-        case _I_WANT_TO_PLAY: {
-            // we accept the connection if the player is the master, and no other player is connected
-            if (isserver) {
-                PlayRequestMsg* m = static_cast<PlayRequestMsg*>(message);
-                srvadd = p->address;
+            case _I_WANT_TO_PLAY: {
+                // we accept the connection if the player is the master, and no other player is connected
+                if (isserver) {
+                    srvadd = p->address;
+                }
+                break;
             }
-            break;
+            case _FighterPositionMessage_: {
+
+                FighterPositionMessage* m = static_cast<FighterPositionMessage*>(message);
+                Vector2D pos = { m->posx,m->posy };
+                float r = m->rot;
+                mngr_->getSystem<FighterSystem>()->SetTrans(getID(), pos, r);
+                break;
+            }
+            case _BulletPositionMessage_: {
+                BulletPositionMessage* m = static_cast<BulletPositionMessage*>(message);
+                Vector2D pos = { m->posx,m->posy };
+                float r = m->r;
+                Vector2D vel = { m->velx,m->vely };
+                mngr_->getSystem<BulletsSystem>()->createBullet(pos, vel, r);
+                break;
+            }
         }
-        case _FighterPositionMessage_: {
-
-            FighterPositionMessage* m = static_cast<FighterPositionMessage*>(message);
-            Vector2D pos = { m->posx,m->posy };
-            float r = m->rot;
-            mngr_->getSystem<FighterSystem>()->SetTrans(getID(), pos, r);
-            break;
-
-        }
-        case _BulletPositionMessage_: {}
-
-                                    BulletPositionMessage* m = static_cast<BulletPositionMessage*>(message);
-
-                                    break;
-        };
-        
-
-
-
-
+    
     }
     
 }
@@ -163,7 +157,7 @@ void NETSystem::SendBulletSpawn(Vector2D pos, Vector2D v, float r) {
     m->velx = v.getX();
     m->vely = v.getY();
 
-    p->len =sizeof( BulletPositionMessage);
+    p->len =sizeof(BulletPositionMessage);
     p->address = srvadd;
 
     // send the message

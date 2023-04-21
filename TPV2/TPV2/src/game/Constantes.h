@@ -18,6 +18,8 @@
 	const Vector2D POS2 = { 400,200 };
 	const int PWIDTH = 20;
 	const int PHEIGHT = 30;
+	const int B_W = 5;
+	const int B_H = 20;
 
 
 
