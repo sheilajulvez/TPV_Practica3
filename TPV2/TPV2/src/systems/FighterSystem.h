@@ -30,7 +30,7 @@ public:
 	inline Entity* getPlayer2() {
 		return fighter2;
 	}
-	void SetTrans(int id);
+	void SetTrans(int id, Vector2D v,int r);
 private:
 	// Para reaccionar al mensaje de que ha habido un choque entre el fighter y un
 	// un asteroide. Poner el caza en el centro con velocidad (0,0) y rotación 0. No

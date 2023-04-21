@@ -37,9 +37,15 @@ void FighterSystem::initSystem() {
 	t1->setPos(POS1);
 	t1->setW(PWIDTH);
 	t1->setH(PHEIGHT);
+	Uint8 myId = netsystem->getID();
+	if (myId == 0)
+	trans_player=t1;
+	else {
+		trans_player=t2;
+	}
 
 	//mngr_->addComponent<Image>(fighter);
-	
+
 
 }
 // Si el juego está parado no hacer nada, en otro caso actualizar la velocidad
@@ -63,15 +69,21 @@ void FighterSystem::update() {
 	
 }
 
-void FighterSystem::SetTrans(int id) {
-	if (id == 0)
-		move(fighter);
-	else
-		move(fighter2);
+void FighterSystem::SetTrans(int id,Vector2D v,int r) {
+	if (id == 0){
+		t2->setPos(v);
+		t2->setR(r);
+	}
+
+	else {
+		t1->setPos(v);
+		t1->setR(r);
+	}
+		
 }
 void FighterSystem::move(Entity* f) {
 	
-	trans_player = mngr_->getComponent<Transform>(f);
+	//trans_player = mngr_->getComponent<Transform>(f);
 	if (active_) {
 		SDL_Event event_;
 
@@ -141,7 +153,14 @@ void FighterSystem::move(Entity* f) {
 		trans_player->setPos(trans_player->getPos() + trans_player->getVel());
 
 		if (netsystem != nullptr) {
-			mngr_->getSystem<NETSystem>()->SendFighterPosition(trans_player->getPos(), trans_player->getR());
+			Uint8 myId = netsystem->getID();
+			if (myId == 0) {
+				mngr_->getSystem<NETSystem>()->SendFighterPosition(trans_player->getPos(), trans_player->getR());
+			}
+			else {
+				mngr_->getSystem<NETSystem>()->SendFighterPosition(trans_player->getPos(), trans_player->getR());
+			}
+		
 		}
 
 	}

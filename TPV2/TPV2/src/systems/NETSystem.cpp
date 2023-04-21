@@ -81,7 +81,14 @@ void NETSystem::update() {
             FighterPositionMessage* m = static_cast<FighterPositionMessage*>(message);
             Vector2D pos = { m->posx,m->posy };
             float r = m->rot;
-            mngr_->getSystem<FighterSystem>()->SetTrans(getID());
+            if (isserver) {
+                cout << "SERVER! RECEIVED" << m->posx << endl;
+            }
+            else {
+                cout << "player! RECEIVED" << m->posx << endl;
+            }
+   
+            mngr_->getSystem<FighterSystem>()->SetTrans(getID(),pos,r);
             break;
             
         }
@@ -108,7 +115,13 @@ void NETSystem::SendFighterPosition(Vector2D pos, float r) {
     // set the message length and the address of the other player
     p->len = sizeof(m);
     p->address = srvadd;
-
+    if (isserver) {
+        cout << "SERVER SENDING" << m->posx << endl;
+    }
+    else {
+        cout << "PLAYER SENDING" << m->posy << endl;
+    }
+ 
     // send the message
     SDLNet_UDP_Send(sd, -1, p);
 
