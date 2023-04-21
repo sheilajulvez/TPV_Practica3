@@ -5,6 +5,7 @@
 #include "../systems/FighterSystem.h"
 #include "../systems/RenderSystem.h"
 #include "../systems/NETSystem.h"
+#include "../systems/BulletSystem.h"
 class MultiPlayerState:public Manager
 {
 
@@ -20,6 +21,7 @@ private:
 	Vector2D trans;
 	RenderSystem* rendersystem;
 	NETSystem* netsystem;
+	BulletsSystem* bulletsystem;
 public:
 	MultiPlayerState(GameStateMachine* g);
 	virtual ~MultiPlayerState();

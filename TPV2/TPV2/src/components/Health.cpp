@@ -1,7 +1,7 @@
 #include "Health.h"
 #include "../ecs/Entity.h"
 Health::Health() {
-	t = &SDLUtils::instance()->images().at("health");
+	//t = &SDLUtils::instance()->images().at("health");
 }
 Health::~Health() {
 

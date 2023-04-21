@@ -107,6 +107,17 @@ void FighterSystem::move(Entity* f) {
 					m.bullet_spawn.height = 20;
 					m.bullet_spawn.rotation = trans_player->getR();
 					mngr_->getSystem<BulletsSystem>()->receive(m);
+
+
+
+
+					if (netsystem != nullptr) {
+						mngr_->getSystem<NETSystem>()->SendBulletSpawn(m.bullet_spawn.pos, m.bullet_spawn.vel, m.bullet_spawn.rotation);
+
+					}
+
+
+
 				}
 			}
 

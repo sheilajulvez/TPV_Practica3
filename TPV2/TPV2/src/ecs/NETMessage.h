@@ -17,6 +17,14 @@ struct FighterPositionMessage :NETMessage {
 struct PlayRequestMsg :NETMessage {
 	int name;
 };
+struct BulletPositionMessage :NETMessage {
+	float posx;
+	float posy;
+	float velx;
+	float vely;
+
+	float r;
+};
 enum MessageType {
 
 

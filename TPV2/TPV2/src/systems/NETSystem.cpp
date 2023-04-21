@@ -105,15 +105,24 @@ void NETSystem::update() {
             }
             break;
         }
-        case _FighterPositionMessage_:
+        case _FighterPositionMessage_: {
 
             FighterPositionMessage* m = static_cast<FighterPositionMessage*>(message);
             Vector2D pos = { m->posx,m->posy };
             float r = m->rot;
-            mngr_->getSystem<FighterSystem>()->SetTrans(getID(),pos,r);
+            mngr_->getSystem<FighterSystem>()->SetTrans(getID(), pos, r);
             break;
-            
+
         }
+        case _BulletPositionMessage_: {}
+
+                                    BulletPositionMessage* m = static_cast<BulletPositionMessage*>(message);
+
+                                    break;
+        };
+        
+
+
 
 
     }
@@ -140,5 +149,25 @@ void NETSystem::SendFighterPosition(Vector2D pos, float r) {
 
     // send the message
     SDLNet_UDP_Send(sd, -1, p);
+
+}
+
+void NETSystem::SendBulletSpawn(Vector2D pos, Vector2D v, float r) {
+
+    BulletPositionMessage* m= static_cast<BulletPositionMessage*>(message);
+    m->type = _BulletPositionMessage_;
+   
+    m->posx = pos.getX();
+    m->posy = pos.getY();
+    m->r = r;
+    m->velx = v.getX();
+    m->vely = v.getY();
+
+    p->len =sizeof( BulletPositionMessage);
+    p->address = srvadd;
+
+    // send the message
+    SDLNet_UDP_Send(sd, -1, p);
+
 
 }

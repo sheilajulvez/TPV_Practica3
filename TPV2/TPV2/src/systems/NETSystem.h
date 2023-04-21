@@ -28,6 +28,7 @@ public:
 	 int getID();
 
 	 void SendFighterPosition(Vector2D pos, float r);
+	 void SendBulletSpawn(Vector2D pos, Vector2D v,float r);
 	//virtual void receive(const Message& m) { }
 
 };

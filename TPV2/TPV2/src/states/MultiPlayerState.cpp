@@ -5,6 +5,7 @@ MultiPlayerState::MultiPlayerState(GameStateMachine* g) {
     netsystem = addSystem<NETSystem>();
     fightersystem = addSystem<FighterSystem>();
     rendersystem = addSystem<RenderSystem>(1);
+    bulletsystem = addSystem<BulletsSystem>();
 
     Message m;
     m.id = M_ROUND_START;

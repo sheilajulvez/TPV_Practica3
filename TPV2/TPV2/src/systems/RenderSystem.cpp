@@ -70,7 +70,7 @@ void RenderSystem::update() {
 
 	n_health = mngr_->getComponent<Health>(mngr_->getHandler(_HDLR_NETFIGHTER_2))->GetHealth();
 	for (int i = 0; i < n_health; ++i) {
-		health.x = i * (HEALTH_W + HEALTH_X);
+		health.x = i * (HEALTH_W + HEALTH_X)+600;
 		health.y = HEALTH_Y;
 		health.w = HEALTH_W;
 		health.h = HEALTH_H;
