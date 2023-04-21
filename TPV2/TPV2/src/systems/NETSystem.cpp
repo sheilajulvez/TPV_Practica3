@@ -44,7 +44,7 @@ void NETSystem::server(int port) {
         throw("ERROR AL ABRIR EL SERVER");
         //error(); 
     }
-<<<<<<< Updated upstream
+
 
     // creacion de un packet (estructura de datos a enviar/recibir)
     p = SDLNet_AllocPacket(MAX_PACKET_SIZE);
@@ -57,12 +57,12 @@ void NETSystem::server(int port) {
     message = reinterpret_cast<NETMessage*>(p->data);
     socketSet = SDLNet_AllocSocketSet(1);
     SDLNet_UDP_AddSocket(socketSet, sd);
-=======
-    SDLNet_ResolveHost(&srvadd, "192.168.1.147", port);
+
+    //SDLNet_ResolveHost(&srvadd, "192.168.1.147", port);
    
    /* socketSet = SDLNet_AllocSocketSet(1);
     SDLNet_UDP_AddSocket(socketSet, sd);*/
->>>>>>> Stashed changes
+
 
 }
 void NETSystem::client(char* host, int port) {
@@ -77,8 +77,8 @@ void NETSystem::client(char* host, int port) {
 
     socketSet = SDLNet_AllocSocketSet(1);
     SDLNet_UDP_AddSocket(socketSet, sd);
-<<<<<<< Updated upstream
-=======
+
+
 
     PlayRequestMsg* m = static_cast<PlayRequestMsg*>(message);
     m->type = _I_WANT_TO_PLAY;
@@ -89,7 +89,7 @@ void NETSystem::client(char* host, int port) {
 
     // free the socket set, won't be used anymore
    // SDLNet_FreeSocketSet(socketSet);
->>>>>>> Stashed changes
+
 }
 
 void NETSystem::update() {
@@ -110,7 +110,7 @@ void NETSystem::update() {
             FighterPositionMessage* m = static_cast<FighterPositionMessage*>(message);
             Vector2D pos = { m->posx,m->posy };
             float r = m->rot;
-            mngr_->getSystem<FighterSystem>()->SetTrans(getID());
+            mngr_->getSystem<FighterSystem>()->SetTrans(getID(),pos,r);
             break;
             
         }
@@ -135,7 +135,7 @@ void NETSystem::SendFighterPosition(Vector2D pos, float r) {
     m->rot = r;
 
     // set the message length and the address of the other player
-    p->len = sizeof(m);
+    p->len = sizeof(FighterPositionMessage);
     p->address = srvadd;
 
     // send the message
