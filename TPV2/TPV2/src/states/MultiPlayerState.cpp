@@ -10,12 +10,6 @@ MultiPlayerState::MultiPlayerState(GameStateMachine* g) {
     m.id = M_ROUND_START;
     send(m);
    
-    /*netsystem->initSystem();
-    fightersystem->initSystem();
-    rendersystem->initSystem();*/
-    
-
-    
     
 	gsm = g;
     

@@ -52,10 +52,13 @@ void FighterSystem::update() {
 	
 	if (netsystem != nullptr) {
 		Uint8 myId = netsystem->getID();
-		if (myId == 0)
+		if (myId == 0) {
 			move(fighter);
-		else
+		}
+		else {
 			move(fighter2);
+		}
+			
 	}
 	else {
 		move(fighter);
@@ -63,11 +66,20 @@ void FighterSystem::update() {
 	
 }
 
-void FighterSystem::SetTrans(int id) {
-	if (id == 0)
-		move(fighter);
-	else
-		move(fighter2);
+void FighterSystem::SetTrans(int id, Vector2D p, float r) {
+	
+	if (id == 0) {
+		trans_player = mngr_->getComponent<Transform>(fighter2);
+		trans_player->setPos(p);
+		trans_player->setR(r);
+	}
+		
+	else {
+		trans_player = mngr_->getComponent<Transform>(fighter);
+		trans_player->setPos(p);
+		trans_player->setR(r);
+	}
+		
 }
 void FighterSystem::move(Entity* f) {
 	
