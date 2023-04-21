@@ -1,25 +1,9 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(503,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
-NETMessage.obj : warning LNK4099: no se encontró PDB '' con 'NETMessage.obj' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-DeAcceleration.obj : warning LNK4099: no se encontró PDB '' con 'DeAcceleration.obj' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-FighterCtrl.obj : warning LNK4099: no se encontró PDB '' con 'FighterCtrl.obj' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-Follow.obj : warning LNK4099: no se encontró PDB '' con 'Follow.obj' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-Generations.obj : warning LNK4099: no se encontró PDB '' con 'Generations.obj' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-Gun.obj : warning LNK4099: no se encontró PDB '' con 'Gun.obj' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-Image.obj : warning LNK4099: no se encontró PDB '' con 'Image.obj' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-ShowAtOpposideSide.obj : warning LNK4099: no se encontró PDB '' con 'ShowAtOpposideSide.obj' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-Transform.obj : warning LNK4099: no se encontró PDB '' con 'Transform.obj' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-Component.obj : warning LNK4099: no se encontró PDB '' con 'Component.obj' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-Entity.obj : warning LNK4099: no se encontró PDB '' con 'Entity.obj' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-Message.obj : warning LNK4099: no se encontró PDB '' con 'Message.obj' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-JSON.obj : warning LNK4099: no se encontró PDB '' con 'JSON.obj' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-JSONValue.obj : warning LNK4099: no se encontró PDB '' con 'JSONValue.obj' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-json_demo.obj : warning LNK4099: no se encontró PDB '' con 'json_demo.obj' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-main.obj : warning LNK4099: no se encontró PDB '' con 'main.obj' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-SDLUtils.obj : warning LNK4099: no se encontró PDB '' con 'SDLUtils.obj' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-sdlutils_demo.obj : warning LNK4099: no se encontró PDB '' con 'sdlutils_demo.obj' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-SoundEffect.obj : warning LNK4099: no se encontró PDB '' con 'SoundEffect.obj' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-Texture.obj : warning LNK4099: no se encontró PDB '' con 'Texture.obj' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-Collisions.obj : warning LNK4099: no se encontró PDB '' con 'Collisions.obj' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-Vector2D.obj : warning LNK4099: no se encontró PDB '' con 'Vector2D.obj' o en ''; se vinculará el objeto sin tener en cuenta información de depuración
-     Creando biblioteca C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\bin\TPV2Debug.lib y objeto C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\bin\TPV2Debug.exp
+  CollisionsSystem.cpp
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(9,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(10,25): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\components\Transform.h(15,8): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(50,32): warning C4101: 'e': variable local sin referencia
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(47,1): message : al compilar la función del miembro clase plantilla "SoundEffect &SDLUtils::map_access_wrapper<SoundEffect>::at(std::string)"
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(194,34): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<SoundEffect>" que se está compilando
   TPV2.vcxproj -> C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\bin\TPV2Debug.exe

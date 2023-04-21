@@ -16,7 +16,8 @@ void CollisionsSystem::receive(const Message& m) {
 }
 // Inicializar el sistema, etc.
 void CollisionsSystem::initSystem() {
-	
+	fighter = mngr_->getHandler(_HDLR_FIGHTER);
+	fighter2 = mngr_->getHandler(_HDLR_NETFIGHTER_2);
 	trans_player = mngr_->getComponent<Transform>(mngr_->getHandler(_HDLR_FIGHTER));
 	trans_player2= mngr_->getComponent<Transform>(mngr_->getHandler(_HDLR_NETFIGHTER_2));
 	health = mngr_->getComponent<Health>(mngr_->getHandler(_HDLR_FIGHTER));
@@ -46,8 +47,10 @@ void CollisionsSystem::update() {
 					m.id = M_COLLISION_BULLET_ASTEROID;
 					m.asteroid_collision_bullet.a = b;
 					mngr_->getSystem<BulletsSystem>()->receive(m);
-					health->LessHealth();
-
+					
+					m.id = M_COLLISION_FIGHTER;
+					m.f.f = fighter;
+					mngr_->send(m);
 				}
 				if (Collisions::collidesWithRotation(trans_bullet->getPos(), trans_bullet->getW(), trans_bullet->getH(), trans_bullet->getR(),
 					trans_player2->getPos(), trans_player2->getW(), trans_player2->getH(), trans_player2->getR())) {
@@ -56,7 +59,10 @@ void CollisionsSystem::update() {
 					m.id = M_COLLISION_BULLET_ASTEROID;
 					m.asteroid_collision_bullet.a = b;
 					mngr_->getSystem<BulletsSystem>()->receive(m);
-					health2->LessHealth();
+
+					m.id = M_COLLISION_FIGHTER;
+					m.f.f = fighter2;
+					mngr_->send(m);
 
 				}
 			}

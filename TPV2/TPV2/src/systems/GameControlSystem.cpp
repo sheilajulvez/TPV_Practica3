@@ -15,6 +15,9 @@ void GameCtrlSystem::receive(const Message& m)  {
 	case M_ASTEROIDS_EXTINCTION:
 		onAsteroidsExtinction();
 		break;
+	case M_COLLISION_FIGHTER:
+		CollisionFighter(m.f.f);
+		break;
 	default: break;
 	}
 }
@@ -104,4 +107,31 @@ void GameCtrlSystem::onAsteroidsExtinction() {
 	m.id = M_END;
 	m.end.winner = true;
 	yi->send(m);
+}
+
+
+void GameCtrlSystem::CollisionFighter(Entity* f) {
+	Message m;
+	m.id = M_ROUND_START;
+	mngr_->send(m);
+	mngr_->getComponent<Health>(f)->LessHealth();
+
+	if (mngr_->getComponent<Health>(f)->GetHealth() < 1) {
+		Message m;
+		GameOverState* yi = new GameOverState(gsm);
+		gsm->changeState(yi);
+		/*m.id = M_END;
+		m.end.winner = false;
+		yi->send(m);*/
+
+	}
+	else {
+		PauseState* p = new PauseState(gsm);
+		gsm->pushState(p);
+		p->getComponent<Health>(f)->setHealth(mngr_->getComponent<Health>(f)->GetHealth());
+		Message m;
+		m.id = M_PAUSE;
+		p->send(m);
+
+	}
 }

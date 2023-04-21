@@ -7,6 +7,7 @@
 #include "../systems/NETSystem.h"
 #include "../systems/BulletSystem.h"
 #include "../systems/CollisionsSystem.h"
+#include "../systems/GameControlSystem.h"
 class MultiPlayerState:public Manager
 {
 
@@ -24,6 +25,7 @@ private:
 	NETSystem* netsystem;
 	BulletsSystem* bulletsystem;
 	CollisionsSystem* collision;
+	GameCtrlSystem* gamecontrolsystem;
 public:
 	MultiPlayerState(GameStateMachine* g);
 	virtual ~MultiPlayerState();

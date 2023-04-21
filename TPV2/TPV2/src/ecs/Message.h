@@ -20,6 +20,10 @@ struct Message {
 	struct {
 		bool winner;
 	}end;
+
+	struct {
+		Entity* f;
+	}f;
 	
 	
 };

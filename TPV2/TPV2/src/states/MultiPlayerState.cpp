@@ -2,12 +2,13 @@
 
 MultiPlayerState::MultiPlayerState(GameStateMachine* g) {
 
+    this->gsm = g;
     netsystem = addSystem<NETSystem>();
     fightersystem = addSystem<FighterSystem>();
     rendersystem = addSystem<RenderSystem>(1);
     bulletsystem = addSystem<BulletsSystem>();
     collision = addSystem<CollisionsSystem>();
-
+    gamecontrolsystem = addSystem<GameCtrlSystem>(gsm);
     Message m;
     m.id = M_ROUND_START;
     send(m);

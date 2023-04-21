@@ -16,6 +16,7 @@ public:
 	void update() override;
 	inline int getstate_() { return state_; };
 	inline void setstate_(int s) { state_ = s; };
+	void CollisionFighter(Entity* f);
 private:
 	// Para gestionar el mensaje de que ha habido un choque entre el fighter y un
 	// un asteroide. Tiene que avisar que ha acabado la ronda, quitar una vida

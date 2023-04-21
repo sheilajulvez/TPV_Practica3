@@ -64,6 +64,7 @@ enum msgId : msgId_type {
 	M_COLLISION_BULLET_ASTEROID = 6,
 	M_ASTEROIDS_EXTINCTION=7,
 	M_BULLET_SPAWN=8,
+	M_COLLISION_FIGHTER=9,
 	
 	// do not remove this
 	_LAST_MSG_ID
