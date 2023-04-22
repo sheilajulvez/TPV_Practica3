@@ -24,6 +24,12 @@ void RenderSystem::receive(const Message& m) {
 	case M_ROUND_START:
 		onRoundStart();
 		break;
+	case PLAYER1_WIN:
+		state_ = 3;
+		break;
+	case PLAYER2_WIN:
+		state_ = 4;
+		break;
 	}
 }
 // Inicializar el sistema, etc.
@@ -41,7 +47,7 @@ void RenderSystem::initSystem() {
 // - Dibujar los mensajes correspondientes: si el juego está parado, etc (como en
 // la práctica 1)
 void RenderSystem::update() {
-	//Pause=0, Play=1, Win=2, GameOver=34
+	//Pause=0, Play=1, Win=2, GameOver=3
 	SDL_RenderClear(renderer);
 	trans= mngr_->getComponent<Transform>(mngr_->getHandler(_HDLR_FIGHTER));
 
@@ -184,6 +190,11 @@ void RenderSystem::update() {
 		}
 	
 
+	}
+	else if (state_ == 3) {
+		SDL_Color s = { 255,0,0 };
+		f->renderText("PRESS SPACE TO START", s);
+		f->render(SDLUtils::instance()->renderer(), "PRESS SPACE TO START", (WIN_WIDTH / 2) - 60, WIN_HEIGHT / 2, s);
 	}
 	
 	// - Dibujar las vidas (siempre).

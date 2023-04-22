@@ -65,6 +65,8 @@ enum msgId : msgId_type {
 	M_ASTEROIDS_EXTINCTION=7,
 	M_BULLET_SPAWN=8,
 	M_COLLISION_FIGHTER=9,
+	PLAYER1_WIN=10,
+	PLAYER2_WIN=11,
 	
 	// do not remove this
 	_LAST_MSG_ID
