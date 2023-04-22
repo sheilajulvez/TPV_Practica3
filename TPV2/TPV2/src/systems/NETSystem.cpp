@@ -135,11 +135,11 @@ void NETSystem::update() {
                     PlayRequestMsg* m = static_cast<PlayRequestMsg*>(message);
 
                     other_name = m->my_name;
-                    m = static_cast<PlayRequestMsg*>(message);
-                    m->type = _I_WANT_TO_PLAY;
+                    PlayRequestMsg* me = static_cast<PlayRequestMsg*>(message);
+                    me->type = _I_WANT_TO_PLAY;
                     p->len = sizeof(PlayRequestMsg);
 
-                    m->my_name = other_name;
+                    me->my_name = my_name;
                     p->address = srvadd;
                     SDLNet_UDP_Send(sd, -1, p);
 
@@ -148,7 +148,8 @@ void NETSystem::update() {
                 }
                 else {
                     PlayRequestMsg* m = static_cast<PlayRequestMsg*>(message);
-                    m->my_name = other_name;
+                  
+                    other_name = m->my_name;
                 }
                 break;
             }
@@ -189,6 +190,7 @@ void NETSystem::update() {
         }
     
     }
+    
     
 }
 
