@@ -5,6 +5,8 @@
 #include "AsteroidsSystem.h"
 #include "../states/WinState.h"
 #include "../states/GameOverState.h"
+
+
 // Reaccionar a los mensajes recibidos (llamando a métodos correspondientes).
 void GameCtrlSystem::receive(const Message& m)  {
 	switch (m.id) {
@@ -37,7 +39,7 @@ void GameCtrlSystem::update() {
  	InputHandler::instance()->update(event_);
 	if (InputHandler::instance()->keyDownEvent()) {
 			if (InputHandler::instance()->isKeyDown(SDL_SCANCODE_SPACE)) {
-				if (state_ != 1) {				//PAUSA, GAMEOVER, WIN
+				if (state_ != 1 && mngr_->getSystem<NETSystem>()==nullptr) {				//PAUSA, GAMEOVER, WIN
 					
 					gsm->popState();
 					if (gsm->empty_stack_()) {
@@ -47,6 +49,14 @@ void GameCtrlSystem::update() {
 						mngr_->send(m);
 					}
 					
+				}
+				else if (mngr_->getSystem<NETSystem>() != nullptr) {
+					Message m;
+					m.id = M_ROUND_START;
+					mngr_->send(m);
+					mngr_->getSystem<NETSystem>()->SendRoundStart();
+					
+
 				}
 				else {		//JUEGO
 					
@@ -126,12 +136,18 @@ void GameCtrlSystem::CollisionFighter(Entity* f) {
 
 	}
 	else {
-		PauseState* p = new PauseState(gsm);
-		gsm->pushState(p);
-		p->getComponent<Health>(f)->setHealth(mngr_->getComponent<Health>(f)->GetHealth());
+		
 		Message m;
 		m.id = M_PAUSE;
-		p->send(m);
+		gsm->currentState()->send(m);
+		/*Vector2D pos;
+		if (mngr_->getSystem<NETSystem>()->getID()==0) {
+			pos = POS1;
+		}
+		else {
+			pos = POS2;
+		}
+		mngr_->getSystem<FighterSystem>()->SetTrans(mngr_->getSystem<NETSystem>()->getID(), pos, 0);*/
 
 	}
 }

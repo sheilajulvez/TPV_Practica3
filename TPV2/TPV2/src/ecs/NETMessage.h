@@ -25,8 +25,9 @@ struct BulletPositionMessage :NETMessage {
 
 	float r;
 };
-enum MessageType {
-
-
+struct RoundStart :NETMessage {
+	
 };
+
+
 

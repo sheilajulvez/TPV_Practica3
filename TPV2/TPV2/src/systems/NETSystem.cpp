@@ -122,6 +122,13 @@ void NETSystem::update() {
                 mngr_->getSystem<BulletsSystem>()->createBullet(pos, vel, r);
                 break;
             }
+            case _Round_Start_: {
+                RoundStart* mes = static_cast<RoundStart*>(message);
+                Message m;
+                m.id = M_ROUND_START;
+                mngr_->send(m);
+
+            }
         }
     
     }
@@ -169,4 +176,12 @@ void NETSystem::SendBulletSpawn(Vector2D pos, Vector2D v, float r) {
     SDLNet_UDP_Send(sd, -1, p);
 
 
+}
+void NETSystem::SendRoundStart() {
+
+    RoundStart* mes = static_cast<RoundStart*>(message);
+    mes->type = _Round_Start_;
+    p->len = sizeof(RoundStart);
+    p->address = srvadd;
+    SDLNet_UDP_Send(sd, -1, p);
 }
