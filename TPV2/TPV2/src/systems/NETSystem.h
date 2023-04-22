@@ -16,6 +16,9 @@ private:
 
 	SDLNet_SocketSet socketSet;
 	IPaddress srvadd;//direccion ip
+
+	string my_name;
+	string other_name;
 public:
 	NETSystem();
 	constexpr static sysId_type id = _sys_NET;
@@ -32,7 +35,15 @@ public:
 	 void SendFighterPosition(Vector2D pos, float r);
 	 void SendBulletSpawn(Vector2D pos, Vector2D v,float r);
 	 void SendRoundStart();
+	 void PlayersWin(string name);
+
+	 inline string get_MyName() {
+		 return my_name;
+	 }
 	
+	 inline string get_otherName() {
+		 return other_name;
+	 }
 	//virtual void receive(const Message& m) { }
 
 };

@@ -15,6 +15,10 @@ public:
 	// - Dibujar los mensajes correspondientes: si el juego está parado, etc (como en
 	// la práctica 1)
 	void update() override;
+
+	void setText(string t) {
+		text = t;
+	}
 private:
 	// Para gestionar los mensajes correspondientes y actualizar los atributos
 	// winner_ y state_. 
@@ -35,5 +39,7 @@ private:
 	SDL_Rect health;
 	Transform* trans;
 	int n_health;
+
+	string text=" ";
 	
 };

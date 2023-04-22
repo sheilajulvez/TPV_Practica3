@@ -1,6 +1,6 @@
 #pragma once
 #include "../game/ecs_defs.h"
-
+#include <string>
 struct NETMessage
 {
 	NETmsgId_type type;
@@ -16,6 +16,7 @@ struct FighterPositionMessage :NETMessage {
 };
 struct PlayRequestMsg :NETMessage {
 	int name;
+	std::string my_name;
 };
 struct BulletPositionMessage :NETMessage {
 	float posx;
@@ -24,6 +25,10 @@ struct BulletPositionMessage :NETMessage {
 	float vely;
 
 	float r;
+};
+
+struct PlayerWins :NETMessage {
+	std::string name;
 };
 struct RoundStart :NETMessage {
 	

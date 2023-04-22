@@ -1,5 +1,6 @@
 #include "RenderSystem.h"
 #include "../ecs/Manager.h"
+#include "NETSystem.h"
 
 
 
@@ -28,7 +29,7 @@ void RenderSystem::receive(const Message& m) {
 		state_ = 3;
 		break;
 	case PLAYER2_WIN:
-		state_ = 4;
+		state_ = 3;
 		break;
 	}
 }
@@ -65,22 +66,32 @@ void RenderSystem::update() {
 		health.h = HEALTH_H;
 		health_texture->render(health,0);
 	}
+	if (mngr_->getSystem<NETSystem>() != nullptr) {
+		SDL_Color c = { 255,0,0 };
+		std::string name=mngr_->getSystem<NETSystem>()->get_MyName();
+		f->render(SDLUtils::instance()->renderer(),name ,0, health.y + 10, c );
+		 name = mngr_->getSystem<NETSystem>()->get_otherName();
+		 if (name == "")name = "djj";
+		f->render(SDLUtils::instance()->renderer(), name, 400, health.y + 10, c);
 
-	trans = mngr_->getComponent<Transform>(mngr_->getHandler(_HDLR_NETFIGHTER_2));
 
-	dest.x = trans->getPos().getX();
-	dest.y = trans->getPos().getY();
-	dest.w = trans->getW();
-	dest.h = trans->getH();
-	fighter_texture->render(dest, trans->getR());
+		trans = mngr_->getComponent<Transform>(mngr_->getHandler(_HDLR_NETFIGHTER_2));
 
-	n_health = mngr_->getComponent<Health>(mngr_->getHandler(_HDLR_NETFIGHTER_2))->GetHealth();
-	for (int i = 0; i < n_health; ++i) {
-		health.x = i * (HEALTH_W + HEALTH_X)+600;
-		health.y = HEALTH_Y;
-		health.w = HEALTH_W;
-		health.h = HEALTH_H;
-		health_texture->render(health, 0);
+		dest.x = trans->getPos().getX();
+		dest.y = trans->getPos().getY();
+		dest.w = trans->getW();
+		dest.h = trans->getH();
+		fighter_texture->render(dest, trans->getR());
+
+		n_health = mngr_->getComponent<Health>(mngr_->getHandler(_HDLR_NETFIGHTER_2))->GetHealth();
+		for (int i = 0; i < n_health; ++i) {
+			health.x = i * (HEALTH_W + HEALTH_X) + 600;
+			health.y = HEALTH_Y;
+			health.w = HEALTH_W;
+			health.h = HEALTH_H;
+			health_texture->render(health, 0);
+		}
+
 	}
 	
 	if (state_ == 1) {
@@ -193,8 +204,8 @@ void RenderSystem::update() {
 	}
 	else if (state_ == 3) {
 		SDL_Color s = { 255,0,0 };
-		f->renderText("PRESS SPACE TO START", s);
-		f->render(SDLUtils::instance()->renderer(), "PRESS SPACE TO START", (WIN_WIDTH / 2) - 60, WIN_HEIGHT / 2, s);
+		f->renderText(text, s);
+		f->render(SDLUtils::instance()->renderer(), text, (WIN_WIDTH / 2) - 60, WIN_HEIGHT / 2, s);
 	}
 	
 	// - Dibujar las vidas (siempre).

@@ -2,6 +2,7 @@
 #include "../ecs/Manager.h"
 #include "FighterSystem.h"
 #include "BulletSystem.h"
+#include "RenderSystem.h"
 NETSystem::NETSystem() {
     isserver = false;
 
@@ -22,8 +23,10 @@ void NETSystem::initSystem() {
     if (a == "1") {
         isserver = true;
         cout << "Dime tu nombre" << endl;
+        cin >> my_name;
        // cin << player1;
         server(PORT);
+    
        
 
     }
@@ -35,7 +38,13 @@ void NETSystem::initSystem() {
         cout << "Dime tu nombre" << endl;
        // cin << player2;
         isserver = false;
+        cin >> my_name;
         client(host, PORT);
+       
+
+
+
+
     }
 }
 
@@ -84,9 +93,29 @@ void NETSystem::client(char* host, int port) {
     PlayRequestMsg* m = static_cast<PlayRequestMsg*>(message);
     m->type = _I_WANT_TO_PLAY;
     p->len = sizeof(PlayRequestMsg);
+
+    m->my_name = my_name;
     p->address = srvadd;
     SDLNet_UDP_Send(sd, -1, p);
    
+
+    if (SDLNet_CheckSockets(socketSet, 3000))
+    {
+        //Si estamos ready
+        if (SDLNet_SocketReady(sd))
+        {
+            if (SDLNet_UDP_Recv(sd, p) > 0)
+            {
+                //Si es un mensaje de bienvenida
+                //estamos listos para empezar el juego
+                if (message->type == _I_WANT_TO_PLAY)
+                {
+                    PlayRequestMsg* m = static_cast<PlayRequestMsg*>(message);
+                    other_name = m->my_name;
+                }
+            }
+        }
+    }
 
     // free the socket set, won't be used anymore
    // SDLNet_FreeSocketSet(socketSet);
@@ -102,6 +131,18 @@ void NETSystem::update() {
                 // we accept the connection if the player is the master, and no other player is connected
                 if (isserver) {
                     srvadd = p->address;
+                    PlayRequestMsg* m = static_cast<PlayRequestMsg*>(message);
+
+                    other_name = m->my_name;
+                    m = static_cast<PlayRequestMsg*>(message);
+                    m->type = _I_WANT_TO_PLAY;
+                    p->len = sizeof(PlayRequestMsg);
+
+                    m->my_name = my_name;
+                    p->address = srvadd;
+                    SDLNet_UDP_Send(sd, -1, p);
+
+
 
                 }
                 break;
@@ -127,6 +168,17 @@ void NETSystem::update() {
                 Message m;
                 m.id = M_ROUND_START;
                 mngr_->send(m);
+
+            }
+            case _PlayerWins: {
+
+                PlayerWins* m= static_cast<PlayerWins*>(message);
+                Message mr;
+                mr.id = PLAYER1_WIN;
+                mngr_->send(mr);
+            
+                mngr_->getSystem<RenderSystem>()->setText(m->name);
+
 
             }
         }
@@ -184,4 +236,8 @@ void NETSystem::SendRoundStart() {
     p->len = sizeof(RoundStart);
     p->address = srvadd;
     SDLNet_UDP_Send(sd, -1, p);
+}
+
+void NETSystem::PlayersWin(string name) {
+
 }

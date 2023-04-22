@@ -141,9 +141,19 @@ void GameCtrlSystem::CollisionFighter(Entity* f) {
 			m.id = PLAYER1_WIN;
 			mngr_->send(m);
 
+			mngr_->getSystem<RenderSystem>()->setText(mngr_->getSystem<NETSystem>()->get_otherName() + " HAS WON");
+
+			mngr_->getSystem<NETSystem>()->PlayersWin(mngr_->getSystem<NETSystem>()->get_MyName() + " HAS LOST");
+
 		}
 		else if(mngr_->getHandler(_HDLR_NETFIGHTER_2) == f){
+			Message m;
+			m.id = PLAYER1_WIN;
+			mngr_->send(m);
 
+			mngr_->getSystem<RenderSystem>()->setText(mngr_->getSystem<NETSystem>()->get_otherName() + " HAS LOST");
+
+			mngr_->getSystem<NETSystem>()->PlayersWin(mngr_->getSystem<NETSystem>()->get_MyName() + " HAS WIN");
 		}
 		
 
@@ -153,14 +163,7 @@ void GameCtrlSystem::CollisionFighter(Entity* f) {
 		Message m;
 		m.id = M_PAUSE;
 		gsm->currentState()->send(m);
-		/*Vector2D pos;
-		if (mngr_->getSystem<NETSystem>()->getID()==0) {
-			pos = POS1;
-		}
-		else {
-			pos = POS2;
-		}
-		mngr_->getSystem<FighterSystem>()->SetTrans(mngr_->getSystem<NETSystem>()->getID(), pos, 0);*/
+		
 
 	}
 }

@@ -86,6 +86,7 @@ enum NETmsgId : NETmsgId_type {
 	_I_WANT_TO_PLAY = 2,
 	_BulletPositionMessage_ = 3,
 	_Round_Start_=4,
+	_PlayerWins=5,
 
 	_LAST_NETMSG_ID
 };
