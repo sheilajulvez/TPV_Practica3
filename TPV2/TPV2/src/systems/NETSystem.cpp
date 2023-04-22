@@ -94,28 +94,29 @@ void NETSystem::client(char* host, int port) {
     m->type = _I_WANT_TO_PLAY;
     p->len = sizeof(PlayRequestMsg);
 
+
     m->my_name = my_name;
     p->address = srvadd;
     SDLNet_UDP_Send(sd, -1, p);
    
 
-    if (SDLNet_CheckSockets(socketSet, 3000))
-    {
-        //Si estamos ready
-        if (SDLNet_SocketReady(sd))
-        {
-            if (SDLNet_UDP_Recv(sd, p) > 0)
-            {
-                //Si es un mensaje de bienvenida
-                //estamos listos para empezar el juego
-                if (message->type == _I_WANT_TO_PLAY)
-                {
-                    PlayRequestMsg* m = static_cast<PlayRequestMsg*>(message);
-                    other_name = m->my_name;
-                }
-            }
-        }
-    }
+    //if (SDLNet_CheckSockets(socketSet, 3000))
+    //{
+    //    //Si estamos ready
+    //    if (SDLNet_SocketReady(sd))
+    //    {
+    //        if (SDLNet_UDP_Recv(sd, p) > 0)
+    //        {
+    //            //Si es un mensaje de bienvenida
+    //            //estamos listos para empezar el juego
+    //            if (message->type == _I_WANT_TO_PLAY)
+    //            {
+    //                PlayRequestMsg* m = static_cast<PlayRequestMsg*>(message);
+    //                other_name = m->my_name;
+    //            }
+    //        }
+    //    }
+    //}
 
     // free the socket set, won't be used anymore
    // SDLNet_FreeSocketSet(socketSet);
@@ -138,12 +139,16 @@ void NETSystem::update() {
                     m->type = _I_WANT_TO_PLAY;
                     p->len = sizeof(PlayRequestMsg);
 
-                    m->my_name = my_name;
+                    m->my_name = other_name;
                     p->address = srvadd;
                     SDLNet_UDP_Send(sd, -1, p);
 
 
 
+                }
+                else {
+                    PlayRequestMsg* m = static_cast<PlayRequestMsg*>(message);
+                    m->my_name = other_name;
                 }
                 break;
             }
