@@ -1,8 +1,9 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(503,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
-  CollisionsSystem.cpp
+  PauseState.cpp
 C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(9,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
 C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(10,25): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
 C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\components\Transform.h(15,8): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\FighterSystem.h(48,49): warning C4244: 'inicializando': conversión de 'Uint32' a 'float'; posible pérdida de datos
 C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(50,32): warning C4101: 'e': variable local sin referencia
 C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(47,1): message : al compilar la función del miembro clase plantilla "SoundEffect &SDLUtils::map_access_wrapper<SoundEffect>::at(std::string)"
 C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(194,34): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<SoundEffect>" que se está compilando

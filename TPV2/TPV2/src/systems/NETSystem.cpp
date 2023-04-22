@@ -21,6 +21,8 @@ void NETSystem::initSystem() {
     cin >> a;
     if (a == "1") {
         isserver = true;
+        cout << "Dime tu nombre" << endl;
+       // cin << player1;
         server(PORT);
        
 
@@ -30,6 +32,8 @@ void NETSystem::initSystem() {
         cout << "IP: ";
         char host[1024];
         cin >> host;
+        cout << "Dime tu nombre" << endl;
+       // cin << player2;
         isserver = false;
         client(host, PORT);
     }
@@ -98,6 +102,7 @@ void NETSystem::update() {
                 // we accept the connection if the player is the master, and no other player is connected
                 if (isserver) {
                     srvadd = p->address;
+
                 }
                 break;
             }

@@ -6,6 +6,8 @@ class NETSystem:public System
 {
 private:
 	char* host;
+	char* player1;
+	char* player2;
 	int port;
 	bool isserver;
 	UDPsocket sd;
@@ -29,6 +31,7 @@ public:
 
 	 void SendFighterPosition(Vector2D pos, float r);
 	 void SendBulletSpawn(Vector2D pos, Vector2D v,float r);
+	
 	//virtual void receive(const Message& m) { }
 
 };

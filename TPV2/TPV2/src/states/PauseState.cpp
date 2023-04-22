@@ -12,6 +12,7 @@ PauseState::PauseState(GameStateMachine* gsm) {
 	fightersystem=addSystem<FighterSystem>();
 	rendersystem = addSystem<RenderSystem>(0);
 	gamecontrolsystem->setstate_(0);
+	//netsystem = addSystem<NETSystem>();
 
 	fightersystem->setContext(this);
 	rendersystem->setContext(this);
