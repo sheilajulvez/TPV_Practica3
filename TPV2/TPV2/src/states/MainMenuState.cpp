@@ -1,5 +1,7 @@
 #include "MainMenuState.h"
 #include "PlayState.h"
+#include "MultiPlayerState.h"
+#include "PauseState.h"
 MainMenuState::MainMenuState(GameStateMachine* gs) {
 	g = gs;
 }
@@ -18,12 +20,13 @@ void MainMenuState::update() {
 
 	if (InputHandler::instance()->keyDownEvent()) {
 		if (InputHandler::instance()->isKeyDown(SDL_SCANCODE_S)) {
-			
+			g->pushState(new MultiPlayerState(g));
 		}
 		else if (InputHandler::instance()->isKeyDown(SDL_SCANCODE_J)) {
-			g->changeState(new PlayState(g));
+			g->pushState(new PlayState(g));
+			
+			g->pushState(new PauseState(g));
 		}
 	}
-	
 	
 }

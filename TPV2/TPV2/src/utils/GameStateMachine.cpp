@@ -31,7 +31,7 @@ GameStateMachine::~GameStateMachine() {
 	/*pushState(new PlayState(this));
 	pushState(new PauseState(this));*/
 	// pushState(new MainMenuState(this));
-	 pushState(new MultiPlayerState(this));
+	 pushState(new MainMenuState(this));
 }
 
 Manager* GameStateMachine::currentState() const {

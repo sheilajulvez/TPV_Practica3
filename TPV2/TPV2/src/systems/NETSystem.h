@@ -18,7 +18,7 @@ private:
 	IPaddress srvadd;//direccion ip
 
 	string my_name="server";
-	string other_name="client";
+	string other_name="Waiting for other player";
 public:
 	NETSystem();
 	constexpr static sysId_type id = _sys_NET;

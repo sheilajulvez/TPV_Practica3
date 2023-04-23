@@ -17,14 +17,20 @@ void CollisionsSystem::receive(const Message& m) {
 // Inicializar el sistema, etc.
 void CollisionsSystem::initSystem() {
 	fighter = mngr_->getHandler(_HDLR_FIGHTER);
-	fighter2 = mngr_->getHandler(_HDLR_NETFIGHTER_2);
+	
 	trans_player = mngr_->getComponent<Transform>(mngr_->getHandler(_HDLR_FIGHTER));
-	trans_player2= mngr_->getComponent<Transform>(mngr_->getHandler(_HDLR_NETFIGHTER_2));
+	
 	health = mngr_->getComponent<Health>(mngr_->getHandler(_HDLR_FIGHTER));
-	health2= mngr_->getComponent<Health>(mngr_->getHandler(_HDLR_NETFIGHTER_2));
+	
 	crash = &SDLUtils::instance()->soundEffects().at("explosion");
 	bullet_asteroid = &SDLUtils::instance()->soundEffects().at("largewave");
 	netsystem = mngr_->getSystem<NETSystem>();
+
+	if (netsystem != nullptr) {
+		fighter2 = mngr_->getHandler(_HDLR_NETFIGHTER_2);
+		trans_player2 = mngr_->getComponent<Transform>(mngr_->getHandler(_HDLR_NETFIGHTER_2));
+		health2 = mngr_->getComponent<Health>(mngr_->getHandler(_HDLR_NETFIGHTER_2));
+	}
 }
 
 // Si el juego está parado no hacer nada, en otro caso comprobar colisiones como

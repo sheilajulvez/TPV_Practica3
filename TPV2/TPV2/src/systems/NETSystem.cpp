@@ -119,8 +119,9 @@ void NETSystem::client(char* host, int port) {
 }
 
 void NETSystem::update() {
+    
     while (SDLNet_UDP_Recv(sd, p) > 0) {
-
+        
         switch (message->type) {
 
             case _I_WANT_TO_PLAY: {
