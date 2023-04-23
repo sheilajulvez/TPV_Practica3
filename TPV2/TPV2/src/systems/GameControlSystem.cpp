@@ -127,33 +127,62 @@ void GameCtrlSystem::CollisionFighter(Entity* f) {
 	mngr_->getComponent<Health>(f)->LessHealth();
 
 	if (mngr_->getComponent<Health>(f)->GetHealth() < 1) {
-		/*Message m;
-		GameOverState* yi = new GameOverState(gsm);
-		gsm->changeState(yi);*/
-		/*m.id = M_END;
-		m.end.winner = false;
-		yi->send(m);*/
-		
-
-		if (mngr_->getHandler(_HDLR_FIGHTER) == f && mngr_->getSystem<NETSystem>()->getID()==0) {
-			//ha ganadp server, perdido client
+		if (mngr_->getSystem<NETSystem>() == nullptr) {
 			Message m;
-			m.id = PLAYER1_WIN;
-			mngr_->send(m);
-
-			mngr_->getSystem<RenderSystem>()->setText(mngr_->getSystem<NETSystem>()->get_otherName() + " HAS WON");
-
-			mngr_->getSystem<NETSystem>()->PlayersWin(mngr_->getSystem<NETSystem>()->get_MyName() + " HAS LOST");
+			GameOverState* yi = new GameOverState(gsm);
+			gsm->changeState(yi);
+			m.id = M_END;
+			m.end.winner = false;
+			yi->send(m);
 
 		}
-		else if(mngr_->getHandler(_HDLR_NETFIGHTER_2) == f){
-			Message m;
-			m.id = PLAYER1_WIN;
-			mngr_->send(m);
+		
+		else {
+			if (mngr_->getHandler(_HDLR_FIGHTER) == f  ) {
+				if (mngr_->getSystem<NETSystem>()->getID() == 0) {
+					Message m;
+					m.id = PLAYER1_WIN;
+					mngr_->send(m);
+					mngr_->getSystem<RenderSystem>()->setText("YOU LOOSE");
 
-			mngr_->getSystem<RenderSystem>()->setText(mngr_->getSystem<NETSystem>()->get_otherName() + " HAS LOST");
+				}
+				else {
+					Message m;
+					m.id = PLAYER1_WIN;
+					mngr_->send(m);
+					mngr_->getSystem<RenderSystem>()->setText("YOU WIN");
+				}
+				
+				
+				
 
-			mngr_->getSystem<NETSystem>()->PlayersWin(mngr_->getSystem<NETSystem>()->get_MyName() + " HAS WIN");
+				//mngr_->getSystem<NETSystem>()->PlayersWin(mngr_->getSystem<NETSystem>()->get_MyName() + " HAS LOST");
+
+			}
+			else if (mngr_->getHandler(_HDLR_NETFIGHTER_2) == f ) {
+
+				if (mngr_->getSystem<NETSystem>()->getID() == 1) {
+					Message m;
+					m.id = PLAYER1_WIN;
+					mngr_->send(m);
+					mngr_->getSystem<RenderSystem>()->setText("YOU LOOSE");
+
+				}
+				else {
+					Message m;
+					m.id = PLAYER1_WIN;
+					mngr_->send(m);
+					mngr_->getSystem<RenderSystem>()->setText("YOU WIN");
+				}
+				/*Message m;
+				m.id = PLAYER2_WIN;
+				mngr_->send(m);
+
+				mngr_->getSystem<RenderSystem>()->setText(mngr_->getSystem<NETSystem>()->get_otherName() + " HAS LOST");*/
+
+				//mngr_->getSystem<NETSystem>()->PlayersWin(mngr_->getSystem<NETSystem>()->get_MyName() + " HAS WIN");
+
+			}
 		}
 		
 

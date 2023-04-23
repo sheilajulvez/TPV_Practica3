@@ -17,8 +17,8 @@ private:
 	SDLNet_SocketSet socketSet;
 	IPaddress srvadd;//direccion ip
 
-	string my_name;
-	string other_name;
+	string my_name="server";
+	string other_name="client";
 public:
 	NETSystem();
 	constexpr static sysId_type id = _sys_NET;

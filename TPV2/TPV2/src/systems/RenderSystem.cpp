@@ -68,14 +68,21 @@ void RenderSystem::update() {
 	}
 	if (mngr_->getSystem<NETSystem>() != nullptr) {
 		SDL_Color c = { 255,0,0 };
-		std::string name=mngr_->getSystem<NETSystem>()->get_MyName();
-		f->render(SDLUtils::instance()->renderer(),name ,0, health.y + 10, c );
-		 name = mngr_->getSystem<NETSystem>()->get_otherName();
-		 if (name == "")name = "djj";
-		f->render(SDLUtils::instance()->renderer(), name, 400, health.y + 10, c);
-
-
+		if (mngr_->getSystem<NETSystem>()->getID() == 0) {
+			 name = mngr_->getSystem<NETSystem>()->get_MyName();
+			 other = mngr_->getSystem<NETSystem>()->get_otherName();
+		}
+		else {
+			other = mngr_->getSystem<NETSystem>()->get_MyName();
+			name = mngr_->getSystem<NETSystem>()->get_otherName();
+		}
+		
+		
+		f->render(SDLUtils::instance()->renderer(),name ,trans->getPos().getX(), trans->getPos().getY() + trans->getH()+5, c);
+		
+		 //if (name == "")name = "Client";
 		trans = mngr_->getComponent<Transform>(mngr_->getHandler(_HDLR_NETFIGHTER_2));
+		f->render(SDLUtils::instance()->renderer(), other, trans->getPos().getX(),trans->getPos().getY() + trans->getH() + 5, c);
 
 		dest.x = trans->getPos().getX();
 		dest.y = trans->getPos().getY();

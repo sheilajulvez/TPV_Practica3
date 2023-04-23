@@ -40,6 +40,9 @@ private:
 	Transform* trans;
 	int n_health;
 
+	string name;
+	string other;
+
 	string text=" ";
 	
 };

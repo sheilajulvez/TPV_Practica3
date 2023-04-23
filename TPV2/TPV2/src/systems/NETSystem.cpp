@@ -26,9 +26,6 @@ void NETSystem::initSystem() {
         cin >> my_name;
        // cin << player1;
         server(PORT);
-    
-       
-
     }
     else {
         // Pregunta por la IP
@@ -40,9 +37,6 @@ void NETSystem::initSystem() {
         isserver = false;
         cin >> my_name;
         client(host, PORT);
-       
-
-
 
 
     }
@@ -92,10 +86,11 @@ void NETSystem::client(char* host, int port) {
 
     PlayRequestMsg* m = static_cast<PlayRequestMsg*>(message);
     m->type = _I_WANT_TO_PLAY;
-    p->len = sizeof(PlayRequestMsg);
+    
 
 
     m->my_name = my_name;
+    p->len = sizeof(PlayRequestMsg);
     p->address = srvadd;
     SDLNet_UDP_Send(sd, -1, p);
    
@@ -135,6 +130,7 @@ void NETSystem::update() {
                     PlayRequestMsg* m = static_cast<PlayRequestMsg*>(message);
 
                     other_name = m->my_name;
+
                     PlayRequestMsg* me = static_cast<PlayRequestMsg*>(message);
                     me->type = _I_WANT_TO_PLAY;
                     p->len = sizeof(PlayRequestMsg);
@@ -148,7 +144,6 @@ void NETSystem::update() {
                 }
                 else {
                     PlayRequestMsg* m = static_cast<PlayRequestMsg*>(message);
-                  
                     other_name = m->my_name;
                 }
                 break;
