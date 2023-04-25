@@ -14,6 +14,9 @@ private:
 	UDPpacket* p;
 	NETMessage* message;
 
+	bool started = false;
+	int lastmsg = 0;
+
 	SDLNet_SocketSet socketSet;
 	IPaddress srvadd;//direccion ip
 

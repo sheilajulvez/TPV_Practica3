@@ -121,15 +121,16 @@ void NETSystem::client(char* host, int port) {
 void NETSystem::update() {
     
     while (SDLNet_UDP_Recv(sd, p) > 0) {
-        
+        lastmsg = SDL_GetTicks();
         switch (message->type) {
-
+        
             case _I_WANT_TO_PLAY: {
                 // we accept the connection if the player is the master, and no other player is connected
                 if (isserver) {
+                    lastmsg = SDL_GetTicks();
                     srvadd = p->address;
                     PlayRequestMsg* m = static_cast<PlayRequestMsg*>(message);
-
+                    started = true;
                     other_name = m->my_name;
 
                     PlayRequestMsg* me = static_cast<PlayRequestMsg*>(message);
@@ -186,7 +187,22 @@ void NETSystem::update() {
         }
     
     }
-    
+    int f = SDL_GetTicks();
+    if (started && f- lastmsg > 3000) {
+        started = false;
+       // SetWaitingTetxt(true);
+        mngr_->getSystem<FighterSystem>()->SetTrans(0, POS1, 0);
+        mngr_->getSystem<FighterSystem>()->SetTrans(1, POS2, 0);
+        other_name = "Waiting for other player";
+        if (!isserver) {
+            SDLNet_UDP_Close(sd);
+            sd = SDLNet_UDP_Open(PORT);
+            isserver = true;
+
+        }
+
+    }
+
     
 }
 

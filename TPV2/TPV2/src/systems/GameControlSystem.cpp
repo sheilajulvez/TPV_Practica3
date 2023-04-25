@@ -70,6 +70,8 @@ void GameCtrlSystem::update() {
 			}
 		
 	}
+
+
 }
 
 // Para gestionar el mensaje de que ha habido un choque entre el fighter y un
