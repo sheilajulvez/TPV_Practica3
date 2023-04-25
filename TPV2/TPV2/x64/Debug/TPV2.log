@@ -1,2 +1,144 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(503,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
-  TPV2.vcxproj -> C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\bin\TPV2Debug.exe
+  NETMessage.cpp
+  NETSystem.cpp
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(9,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(10,25): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\components\Transform.h(15,8): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\FighterSystem.h(48,49): warning C4244: 'inicializando': conversión de 'Uint32' a 'float'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(50,32): warning C4101: 'e': variable local sin referencia
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(47,1): message : al compilar la función del miembro clase plantilla "SoundEffect &SDLUtils::map_access_wrapper<SoundEffect>::at(std::string)"
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(194,34): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<SoundEffect>" que se está compilando
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\NETSystem.cpp(92,16): error C3863: el tipo de matriz 'char [10]' no es asignable
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\NETSystem.cpp(111,32): error C3863: el tipo de matriz 'char [10]' no es asignable
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\NETSystem.cpp(116,33): error C3863: el tipo de matriz 'char [10]' no es asignable
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\NETSystem.cpp(125,32): error C3863: el tipo de matriz 'char [10]' no es asignable
+  MultiPlayerState.cpp
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(9,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(10,25): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\components\Transform.h(15,8): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\FighterSystem.h(48,49): warning C4244: 'inicializando': conversión de 'Uint32' a 'float'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(50,32): warning C4101: 'e': variable local sin referencia
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(47,1): message : al compilar la función del miembro clase plantilla "SoundEffect &SDLUtils::map_access_wrapper<SoundEffect>::at(std::string)"
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(194,34): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<SoundEffect>" que se está compilando
+  MainMenuState.cpp
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(9,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(10,25): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\components\Transform.h(15,8): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(50,32): warning C4101: 'e': variable local sin referencia
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(47,1): message : al compilar la función del miembro clase plantilla "Font &SDLUtils::map_access_wrapper<Font>::at(std::string)"
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(191,27): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<Font>" que se está compilando
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\FighterSystem.h(48,49): warning C4244: 'inicializando': conversión de 'Uint32' a 'float'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\states\MainMenuState.cpp(17,12): warning C4101: 'event_': variable local sin referencia
+  GameOverState.cpp
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(9,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(10,25): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\components\Transform.h(15,8): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\FighterSystem.h(48,49): warning C4244: 'inicializando': conversión de 'Uint32' a 'float'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(50,32): warning C4101: 'e': variable local sin referencia
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(47,1): message : al compilar la función del miembro clase plantilla "SoundEffect &SDLUtils::map_access_wrapper<SoundEffect>::at(std::string)"
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(194,34): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<SoundEffect>" que se está compilando
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\states\GameOverState.cpp(21,12): warning C4101: 'event': variable local sin referencia
+  PauseState.cpp
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(9,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(10,25): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\components\Transform.h(15,8): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\FighterSystem.h(48,49): warning C4244: 'inicializando': conversión de 'Uint32' a 'float'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(50,32): warning C4101: 'e': variable local sin referencia
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(47,1): message : al compilar la función del miembro clase plantilla "SoundEffect &SDLUtils::map_access_wrapper<SoundEffect>::at(std::string)"
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(194,34): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<SoundEffect>" que se está compilando
+  PlayState.cpp
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(9,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(10,25): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\components\Transform.h(15,8): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\FighterSystem.h(48,49): warning C4244: 'inicializando': conversión de 'Uint32' a 'float'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(50,32): warning C4101: 'e': variable local sin referencia
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(47,1): message : al compilar la función del miembro clase plantilla "SoundEffect &SDLUtils::map_access_wrapper<SoundEffect>::at(std::string)"
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(194,34): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<SoundEffect>" que se está compilando
+  WinState.cpp
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(9,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(10,25): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\components\Transform.h(15,8): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\FighterSystem.h(48,49): warning C4244: 'inicializando': conversión de 'Uint32' a 'float'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(50,32): warning C4101: 'e': variable local sin referencia
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(47,1): message : al compilar la función del miembro clase plantilla "SoundEffect &SDLUtils::map_access_wrapper<SoundEffect>::at(std::string)"
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(194,34): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<SoundEffect>" que se está compilando
+  BulletSystem.cpp
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(9,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(10,25): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\components\Transform.h(15,8): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\ecs\Manager.h(72,27): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\BulletSystem.cpp(55,80): message : Vea la referencia a la creación de una instancia de la función plantilla "T *Manager::addComponent<Transform,Vector2D&,Vector2D&,double&,double&,double&>(Entity *,Vector2D &,Vector2D &,double &,double &,double &)" que se está compilando
+          with
+          [
+              T=Transform
+          ]
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\ecs\Manager.h(72,27): warning C4244: 'argumento': conversión de 'const int' a 'float'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\BulletSystem.cpp(66,70): message : Vea la referencia a la creación de una instancia de la función plantilla "T *Manager::addComponent<Transform,Vector2D&,Vector2D&,const int&,const int&,float&>(Entity *,Vector2D &,Vector2D &,const int &,const int &,float &)" que se está compilando
+          with
+          [
+              T=Transform
+          ]
+  CollisionsSystem.cpp
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(9,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(10,25): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\components\Transform.h(15,8): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(50,32): warning C4101: 'e': variable local sin referencia
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(47,1): message : al compilar la función del miembro clase plantilla "SoundEffect &SDLUtils::map_access_wrapper<SoundEffect>::at(std::string)"
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(194,34): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<SoundEffect>" que se está compilando
+  FighterSystem.cpp
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(9,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(10,25): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\components\Transform.h(15,8): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\FighterSystem.h(48,49): warning C4244: 'inicializando': conversión de 'Uint32' a 'float'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(50,32): warning C4101: 'e': variable local sin referencia
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(47,1): message : al compilar la función del miembro clase plantilla "SoundEffect &SDLUtils::map_access_wrapper<SoundEffect>::at(std::string)"
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(194,34): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<SoundEffect>" que se está compilando
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\FighterSystem.cpp(96,37): warning C4244: '=': conversión de 'Uint32' a 'float'; posible pérdida de datos
+  GameControlSystem.cpp
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(9,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(10,25): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\components\Transform.h(15,8): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\FighterSystem.h(48,49): warning C4244: 'inicializando': conversión de 'Uint32' a 'float'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(50,32): warning C4101: 'e': variable local sin referencia
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(47,1): message : al compilar la función del miembro clase plantilla "SoundEffect &SDLUtils::map_access_wrapper<SoundEffect>::at(std::string)"
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(194,34): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<SoundEffect>" que se está compilando
+  RenderSystem.cpp
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(9,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(10,25): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\components\Transform.h(15,8): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(50,32): warning C4101: 'e': variable local sin referencia
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(47,1): message : al compilar la función del miembro clase plantilla "Font &SDLUtils::map_access_wrapper<Font>::at(std::string)"
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(191,27): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<Font>" que se está compilando
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\RenderSystem.cpp(55,31): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\RenderSystem.cpp(56,31): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\RenderSystem.cpp(57,22): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\RenderSystem.cpp(58,22): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\RenderSystem.cpp(81,114): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\RenderSystem.cpp(81,72): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\RenderSystem.cpp(85,116): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\RenderSystem.cpp(85,74): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\RenderSystem.cpp(87,32): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\RenderSystem.cpp(88,32): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\RenderSystem.cpp(89,23): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\RenderSystem.cpp(90,23): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\RenderSystem.cpp(130,34): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\RenderSystem.cpp(131,34): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\RenderSystem.cpp(132,25): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\RenderSystem.cpp(133,25): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\RenderSystem.cpp(165,34): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\RenderSystem.cpp(166,34): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\RenderSystem.cpp(167,25): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\RenderSystem.cpp(168,25): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\RenderSystem.cpp(180,35): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\RenderSystem.cpp(181,35): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\RenderSystem.cpp(182,26): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\RenderSystem.cpp(183,26): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+  GameStateMachine.cpp
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(9,36): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\game\Constantes.h(10,25): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\components\Transform.h(15,8): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\systems\FighterSystem.h(48,49): warning C4244: 'inicializando': conversión de 'Uint32' a 'float'; posible pérdida de datos
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(50,32): warning C4101: 'e': variable local sin referencia
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(47,1): message : al compilar la función del miembro clase plantilla "SoundEffect &SDLUtils::map_access_wrapper<SoundEffect>::at(std::string)"
+C:\Users\julve\Desktop\UNIVERSIDAD\SEGUNDO\TPV2\Practica 3\TPV_Practica3\TPV2\TPV2\src\sdlutils\SDLUtils.h(194,34): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<SoundEffect>" que se está compilando
+  Generando código...

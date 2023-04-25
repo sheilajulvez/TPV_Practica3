@@ -17,8 +17,8 @@ private:
 	SDLNet_SocketSet socketSet;
 	IPaddress srvadd;//direccion ip
 
-	string my_name="server";
-	string other_name="Waiting for other player";
+	char my_name[10];
+	char other_name[10];
 public:
 	NETSystem();
 	constexpr static sysId_type id = _sys_NET;
@@ -35,7 +35,7 @@ public:
 	 void SendFighterPosition(Vector2D pos, float r);
 	 void SendBulletSpawn(Vector2D pos, Vector2D v,float r);
 	 void SendRoundStart();
-	 void PlayersWin(string name);
+	 void SetWaitingTetxt(bool t);
 
 	 inline string get_MyName() {
 		 return my_name;

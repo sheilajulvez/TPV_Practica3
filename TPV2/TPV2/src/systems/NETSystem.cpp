@@ -23,8 +23,11 @@ void NETSystem::initSystem() {
     if (a == "1") {
         isserver = true;
         cout << "Dime tu nombre" << endl;
-        cin >> my_name;
-       // cin << player1;
+        for (int i = 0; i < 10; i++) {
+            cin >> my_name[i];
+        }
+       
+        SetWaitingTetxt(true);
         server(PORT);
     }
     else {
@@ -33,12 +36,11 @@ void NETSystem::initSystem() {
         char host[1024];
         cin >> host;
         cout << "Dime tu nombre" << endl;
-       // cin << player2;
         isserver = false;
-        cin >> my_name;
+        for (int i = 0; i < 10; i++) {
+            cin >> my_name[i];
+        }
         client(host, PORT);
-
-
     }
 }
 
@@ -87,34 +89,11 @@ void NETSystem::client(char* host, int port) {
     PlayRequestMsg* m = static_cast<PlayRequestMsg*>(message);
     m->type = _I_WANT_TO_PLAY;
     
-
-
-    m->my_name = my_name;
+    strcpy(my_name, m->my_name);
     p->len = sizeof(PlayRequestMsg);
     p->address = srvadd;
     SDLNet_UDP_Send(sd, -1, p);
    
-
-    //if (SDLNet_CheckSockets(socketSet, 3000))
-    //{
-    //    //Si estamos ready
-    //    if (SDLNet_SocketReady(sd))
-    //    {
-    //        if (SDLNet_UDP_Recv(sd, p) > 0)
-    //        {
-    //            //Si es un mensaje de bienvenida
-    //            //estamos listos para empezar el juego
-    //            if (message->type == _I_WANT_TO_PLAY)
-    //            {
-    //                PlayRequestMsg* m = static_cast<PlayRequestMsg*>(message);
-    //                other_name = m->my_name;
-    //            }
-    //        }
-    //    }
-    //}
-
-    // free the socket set, won't be used anymore
-   // SDLNet_FreeSocketSet(socketSet);
 
 }
 
@@ -129,23 +108,24 @@ void NETSystem::update() {
                 if (isserver) {
                     srvadd = p->address;
                     PlayRequestMsg* m = static_cast<PlayRequestMsg*>(message);
-
-                    other_name = m->my_name;
+                    strcpy(m->my_name, other_name);
 
                     PlayRequestMsg* me = static_cast<PlayRequestMsg*>(message);
                     me->type = _I_WANT_TO_PLAY;
+                    
+                    strcpy(my_name, m->my_name);
                     p->len = sizeof(PlayRequestMsg);
-
-                    me->my_name = my_name;
+                   
                     p->address = srvadd;
                     SDLNet_UDP_Send(sd, -1, p);
-
+                    SetWaitingTetxt(false);
 
 
                 }
                 else {
                     PlayRequestMsg* m = static_cast<PlayRequestMsg*>(message);
-                    other_name = m->my_name;
+                    
+                    strcpy(m->my_name, other_name);
                 }
                 break;
             }
@@ -241,6 +221,12 @@ void NETSystem::SendRoundStart() {
     SDLNet_UDP_Send(sd, -1, p);
 }
 
-void NETSystem::PlayersWin(string name) {
+void NETSystem::SetWaitingTetxt(bool t) {
+    if (t) {
+        mngr_->getSystem<RenderSystem>()->setText("WAITING FOR OTHER PLAYER");
+    }
+    else {
+        mngr_->getSystem<RenderSystem>()->setText(" ");
+    }
 
 }

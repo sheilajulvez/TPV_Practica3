@@ -16,7 +16,7 @@ struct FighterPositionMessage :NETMessage {
 };
 struct PlayRequestMsg :NETMessage {
 	int name;
-	std::string my_name;
+	char my_name[10];
 };
 struct BulletPositionMessage :NETMessage {
 	float posx;
