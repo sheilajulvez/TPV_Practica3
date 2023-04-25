@@ -10,6 +10,9 @@ private:
 	char* player2;
 	int port;
 	bool isserver;
+
+	int lastmsg = 0;
+	bool started=false;
 	UDPsocket sd;
 	UDPpacket* p;
 	NETMessage* message;
