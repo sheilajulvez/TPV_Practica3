@@ -23,8 +23,10 @@ void NETSystem::initSystem() {
     if (a == "1") {
         isserver = true;
         cout << "Dime tu nombre" << endl;
-        for (int i = 0; i < 10; i++) {
-            cin >> my_name[i];
+        string m;
+        cin >> m;
+        for (int i = 0; i < m.length(); i++) {
+            my_name[i] = m[i];
         }
        
         SetWaitingTetxt(true);
@@ -89,7 +91,7 @@ void NETSystem::client(char* host, int port) {
     PlayRequestMsg* m = static_cast<PlayRequestMsg*>(message);
     m->type = _I_WANT_TO_PLAY;
     
-    strcpy(my_name, m->my_name);
+    strcpy_s(my_name, m->my_name);
     p->len = sizeof(PlayRequestMsg);
     p->address = srvadd;
     SDLNet_UDP_Send(sd, -1, p);
@@ -109,12 +111,12 @@ void NETSystem::update() {
                     started = true;
                     srvadd = p->address;
                     PlayRequestMsg* m = static_cast<PlayRequestMsg*>(message);
-                    strcpy(m->my_name, other_name);
+                    strcpy_s(m->my_name, other_name);
 
                     PlayRequestMsg* me = static_cast<PlayRequestMsg*>(message);
                     me->type = _I_WANT_TO_PLAY;
                     
-                    strcpy(my_name, m->my_name);
+                    strcpy_s(my_name, m->my_name);
                     p->len = sizeof(PlayRequestMsg);
                    
                     p->address = srvadd;
@@ -126,7 +128,7 @@ void NETSystem::update() {
                 else {
                     PlayRequestMsg* m = static_cast<PlayRequestMsg*>(message);
                     
-                    strcpy(m->my_name, other_name);
+                    strcpy_s(m->my_name, other_name);
                 }
                 break;
             }

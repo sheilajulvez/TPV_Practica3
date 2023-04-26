@@ -3,9 +3,10 @@
 MultiPlayerState::MultiPlayerState(GameStateMachine* g) {
 
     this->gsm = g;
+    rendersystem = addSystem<RenderSystem>(1);
     netsystem = addSystem<NETSystem>();
     fightersystem = addSystem<FighterSystem>();
-    rendersystem = addSystem<RenderSystem>(1);
+   
     bulletsystem = addSystem<BulletsSystem>();
     collision = addSystem<CollisionsSystem>();
     gamecontrolsystem = addSystem<GameCtrlSystem>(gsm);
