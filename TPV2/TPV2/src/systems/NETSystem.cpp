@@ -188,7 +188,7 @@ void NETSystem::update() {
     
     }
     int f = SDL_GetTicks();
-    if (started && f- lastmsg > 3000) {
+    if (started && f- lastmsg > 5000) {
         started = false;
        // SetWaitingTetxt(true);
         mngr_->getSystem<FighterSystem>()->SetTrans(0, POS1, 0);

@@ -72,11 +72,11 @@ void CollisionsSystem::update() {
 
 				}
 			}
-			if (Collisions::collidesWithRotation(trans_player->getPos(), trans_player->getW(), trans_player->getH(), trans_player->getR(),
+			/*if (Collisions::collidesWithRotation(trans_player->getPos(), trans_player->getW(), trans_player->getH(), trans_player->getR(),
 				trans_player2->getPos(), trans_player2->getW(), trans_player2->getH(), trans_player2->getR())) {
 				health->LessHealth();
 				health2->LessHealth();
-			}
+			}*/
 		}
 		
 		else{

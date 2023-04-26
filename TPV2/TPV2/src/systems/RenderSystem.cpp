@@ -26,7 +26,8 @@ void RenderSystem::receive(const Message& m) {
 		onRoundStart();
 		break;
 	case PLAYER1_WIN:
-		if (mngr_->getComponent<Health>(mngr_->getHandler(_HDLR_FIGHTER))->GetHealth() < 1) {
+		if (mngr_->getComponent<Health>(mngr_->getHandler(_HDLR_FIGHTER))->GetHealth() < 1 || 
+			mngr_->getComponent<Health>(mngr_->getHandler(_HDLR_NETFIGHTER_2))->GetHealth() < 1) {
 			state_ = 3;
 		}
 	
