@@ -27,7 +27,16 @@
     {
       "id": "bullet",
       "file": "resources/images/fire.png"
+    },
+    {
+      "id": "powerup1",
+      "file": "resources/images/powerup1.png"
+    },
+    {
+      "id": "zaragoza",
+      "file": "resources/images/zaragoza.png"
     }
+
   ],
   
   "messages" : [

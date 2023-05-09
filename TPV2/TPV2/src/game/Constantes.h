@@ -20,6 +20,13 @@
 	const int PHEIGHT = 30;
 	const int B_W = 5;
 	const int B_H = 20;
+	const int P1_W = 50;
+	const int P1_H = 50;
+	const int NAST = 10;
+	const int P2_W = 10;
+	const int P2_H = 10;
+
+	
 
 
 

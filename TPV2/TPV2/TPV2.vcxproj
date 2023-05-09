@@ -19,7 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\components\PowerComponent.h" />
     <ClInclude Include="src\ecs\NETMessage.h" />
+    <ClInclude Include="src\states\NewModeState.h" />
     <ClInclude Include="src\systems\NETSystem.h" />
     <ClInclude Include="src\states\MultiPlayerState.h" />
     <ClInclude Include="src\states\MainMenuState.h" />
@@ -64,6 +66,7 @@
     <ClInclude Include="src\systems\CollisionsSystem.h" />
     <ClInclude Include="src\systems\FighterSystem.h" />
     <ClInclude Include="src\systems\GameControlSystem.h" />
+    <ClInclude Include="src\systems\PowerUpSystem.h" />
     <ClInclude Include="src\systems\RenderSystem.h" />
     <ClInclude Include="src\utils\checkML.h" />
     <ClInclude Include="src\utils\Collisions.h" />
@@ -73,7 +76,9 @@
     <ClInclude Include="src\utils\Vector2D.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="PowerComponent.cpp" />
     <ClCompile Include="src\ecs\NETMessage.cpp" />
+    <ClCompile Include="src\states\NewModeState.cpp" />
     <ClCompile Include="src\systems\NETSystem.cpp" />
     <ClCompile Include="src\states\MultiPlayerState.cpp" />
     <ClCompile Include="src\states\MainMenuState.cpp" />
@@ -110,6 +115,7 @@
     <ClCompile Include="src\systems\CollisionsSystem.cpp" />
     <ClCompile Include="src\systems\FighterSystem.cpp" />
     <ClCompile Include="src\systems\GameControlSystem.cpp" />
+    <ClCompile Include="src\systems\PowerUpSystem.cpp" />
     <ClCompile Include="src\systems\RenderSystem.cpp" />
     <ClCompile Include="src\utils\Collisions.cpp" />
     <ClCompile Include="src\utils\GameStateMachine.cpp" />

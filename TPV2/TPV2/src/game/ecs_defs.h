@@ -22,6 +22,7 @@ enum cmpId : cmpId_type {
 	_GENERATIONS_H=8,
 	_FOLLOW_H=9,
 	_DISABLE_ON_EXIT_H=10,
+	_POWERCOMPONENT_H=11,
 	
 	// do not remove this
 	_LAST_CMP_ID
@@ -33,6 +34,8 @@ enum grpId : grpId_type {
 	_grp_ASTEROIDS_GOLD=1,
 	_grp_ASTEROIDS_BLACK=2,
 	_grp_BULLET=3,
+	_grp_POWERUP=4,
+	
 	
 	_LAST_GRP_ID
 };
@@ -47,6 +50,7 @@ enum sysId : sysId_type {
 	_sys_COLLISIONS=4,
 	_sys_RENDER=5,
 	_sys_NET=6,
+	_sys_POWERUP=7,
 	// do not remove this
 	_LAST_SYS_ID
 };
@@ -67,6 +71,8 @@ enum msgId : msgId_type {
 	M_COLLISION_FIGHTER=9,
 	PLAYER1_WIN=10,
 	PLAYER2_WIN=11,
+	M_COLLISION_POWERUP1=12,
+	
 	
 	// do not remove this
 	_LAST_MSG_ID

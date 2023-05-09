@@ -9,6 +9,7 @@ struct Message {
 	// M_COLLISION_BULLET_ASTEROID
 	struct {
 		Entity* a;
+		bool power = false;
 	}asteroid_collision_bullet;
 	struct {
 		Vector2D pos;
@@ -23,6 +24,7 @@ struct Message {
 
 	struct {
 		Entity* f;
+		bool pepe;
 	}f;
 	
 	

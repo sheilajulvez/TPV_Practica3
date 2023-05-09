@@ -31,6 +31,7 @@ public:
 		return fighter2;
 	}
 	void SetTrans(int id, Vector2D pos, float r);
+	inline bool getvidainfinita() { return vidainfinita; }
 private:
 	// Para reaccionar al mensaje de que ha habido un choque entre el fighter y un
 	// un asteroide. Poner el caza en el centro con velocidad (0,0) y rotación 0. No
@@ -55,5 +56,8 @@ private:
 
 	SoundEffect* thrust = &SDLUtils::instance()->soundEffects().at("thrust");
 	SoundEffect* Pium = &SDLUtils::instance()->soundEffects().at("fire");
+
+	bool vidainfinita = false;
+	double max;
 	
 };

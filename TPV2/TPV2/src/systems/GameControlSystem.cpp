@@ -39,7 +39,9 @@ void GameCtrlSystem::update() {
  	InputHandler::instance()->update(event_);
 	if (InputHandler::instance()->keyDownEvent()) {
 			if (InputHandler::instance()->isKeyDown(SDL_SCANCODE_SPACE)) {
-				if (state_ != 1 && mngr_->getSystem<NETSystem>()==nullptr) {				//PAUSA, GAMEOVER, WIN
+
+				//PAUSA, GAMEOVER, WIN
+				if (state_ != 1 && mngr_->getSystem<NETSystem>()==nullptr) {				
 					
 					gsm->popState();
 					if (gsm->empty_stack_()) {
@@ -50,7 +52,8 @@ void GameCtrlSystem::update() {
 					}
 					
 				}
-				else if (mngr_->getSystem<NETSystem>() != nullptr) {
+				//MULTIPLAYER
+				else if (mngr_->getSystem<NETSystem>() != nullptr) {		
 					Message m;
 					m.id = M_ROUND_START;
 					mngr_->send(m);
@@ -58,8 +61,8 @@ void GameCtrlSystem::update() {
 					
 
 				}
-				else {		//JUEGO
-					
+				//JUEGO
+				else {		
 					PauseState* p = new PauseState(gsm);
 					gsm->pushState(p);
 					p->getComponent<Health>(p->getHandler(_HDLR_FIGHTER))->setHealth(mngr_->getComponent<Health>(mngr_->getHandler(_HDLR_FIGHTER))->GetHealth());
@@ -80,31 +83,35 @@ void GameCtrlSystem::update() {
 	// es el ganador).
 void GameCtrlSystem::onCollision_FighterAsteroid() {
 
-	Message m;
-	m.id = M_ROUND_OVER_;
-	mngr_->getSystem<AsteroidsSystem>()->receive(m);
 
-	m.id = M_ROUND_START;
-	mngr_->send(m);
-	mngr_->getComponent<Health>(mngr_->getHandler(_HDLR_FIGHTER))->LessHealth();
-	if (mngr_->getComponent<Health>(mngr_->getHandler(_HDLR_FIGHTER))->GetHealth() < 1) {
+	if (!mngr_->getSystem<FighterSystem>()->getvidainfinita()) {
 		Message m;
-		GameOverState* yi = new GameOverState(gsm);
-		gsm->changeState(yi);
-		m.id = M_END;
-		m.end.winner = false;
-		yi->send(m);
+		m.id = M_ROUND_OVER_;
+		mngr_->getSystem<AsteroidsSystem>()->receive(m);
 
-	}
-	else {
-		PauseState* p = new PauseState(gsm);
-		gsm->pushState(p);
-		p->getComponent<Health>(p->getHandler(_HDLR_FIGHTER))->setHealth(mngr_->getComponent<Health>(mngr_->getHandler(_HDLR_FIGHTER))->GetHealth());
-		Message m;
-		m.id = M_PAUSE;
-		p->send(m);
+		m.id = M_ROUND_START;
+		mngr_->send(m);
+		mngr_->getComponent<Health>(mngr_->getHandler(_HDLR_FIGHTER))->LessHealth();
+		if (mngr_->getComponent<Health>(mngr_->getHandler(_HDLR_FIGHTER))->GetHealth() < 1) {
+			Message m;
+			GameOverState* yi = new GameOverState(gsm);
+			gsm->changeState(yi);
+			m.id = M_END;
+			m.end.winner = false;
+			yi->send(m);
 
+		}
+		else {
+			PauseState* p = new PauseState(gsm);
+			gsm->pushState(p);
+			p->getComponent<Health>(p->getHandler(_HDLR_FIGHTER))->setHealth(mngr_->getComponent<Health>(mngr_->getHandler(_HDLR_FIGHTER))->GetHealth());
+			Message m;
+			m.id = M_PAUSE;
+			p->send(m);
+
+		}
 	}
+	
 
 
 }

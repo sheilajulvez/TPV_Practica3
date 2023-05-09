@@ -32,4 +32,7 @@ private:
 		bool active_;
 		NETSystem* netsystem;
 		Transform* trans;
+		bool power = false;
+		double time;
+		double max = 500;
 };

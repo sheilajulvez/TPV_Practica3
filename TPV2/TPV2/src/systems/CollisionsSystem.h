@@ -6,6 +6,8 @@
 #include "../components/Health.h"
 #include "../sdlutils/SoundEffect.h"
 #include "NETSystem.h"
+#include "PowerUpSystem.h"
+#include "../components/PowerComponent.h"
 class CollisionsSystem : public System {
 public:
 	constexpr static  sysId_type id = _sys_COLLISIONS;
@@ -35,5 +37,12 @@ private:
 	SoundEffect* crash;
 	SoundEffect* bullet_asteroid;
 	NETSystem* netsystem;
+	int rand;
+	PowerUpSystem* p;
+	Transform* trans_power1;
+	PowerComponent* powercomponent;
+	bool power;
+	
+
 
 };

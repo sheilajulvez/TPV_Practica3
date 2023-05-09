@@ -44,5 +44,7 @@ private:
 	string other;
 
 	string text=" ";
+
+	Texture* tpowerup1;
 	
 };

@@ -8,7 +8,7 @@ void AsteroidsSystem :: receive(const Message& m) {
 	switch (m.id)
 	{
 	case M_COLLISION_BULLET_ASTEROID:
-		onCollision_AsteroidBullet(m.asteroid_collision_bullet.a);
+		onCollision_AsteroidBullet(m.asteroid_collision_bullet.a,m.asteroid_collision_bullet.power);
 		break;
 	case M_ROUND_OVER_:
 		onRoundOver(); 
@@ -80,18 +80,21 @@ void AsteroidsSystem::update() {
 // Para gestionar el mensaje de que ha habido un choque de un asteroide con una
 	// bala. Desactivar el asteroide “a” y crear 2 asteroides como en la práctica 1,
 	// y si no hay más asteroides enviar un mensaje correspondiente.
-void AsteroidsSystem::onCollision_AsteroidBullet(Entity* a) {
+void AsteroidsSystem::onCollision_AsteroidBullet(Entity* a, bool p) {
 
 	mngr_->setAlive(a, false);
-	int size = mngr_->getComponent<Generations>(a)->getState();
-	Transform* t = mngr_->getComponent<Transform>(a);
-	if ((size == 3 || size == 2) && numOfAsteroids_ < 30) {
-		createone(t->getW(), t->getH(), size - 1, a);
-		if (numOfAsteroids_ < 29) {
+	if (!p) {
+		int size = mngr_->getComponent<Generations>(a)->getState();
+		Transform* t = mngr_->getComponent<Transform>(a);
+		if ((size == 3 || size == 2) && numOfAsteroids_ < 100) {
 			createone(t->getW(), t->getH(), size - 1, a);
-		}
+			if (numOfAsteroids_ < 100) {
+				createone(t->getW(), t->getH(), size - 1, a);
+			}
 
+		}
 	}
+	
 	numOfAsteroids_--;
 	
 	if (numOfAsteroids_ < 1) {

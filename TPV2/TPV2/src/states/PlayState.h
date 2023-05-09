@@ -12,7 +12,7 @@
 //#include "../components/FramedImage.h"
 //#include "../components/Generations.h"
 //#include "../components/DisableOnExit.h"
-//#include "../components/Transform.h"
+//#include "../components/Transform.h"po
 //#include"../components/DeAcceleration.h"
 //#include "../components/Image.h"
 //#include "../components/Health.h"

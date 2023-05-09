@@ -25,6 +25,7 @@ public:
 	void update();
 	void initComponent();
 	void render();
+	inline Texture* gettexture() { return texture; }
 
 
 

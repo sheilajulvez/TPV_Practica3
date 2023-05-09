@@ -10,6 +10,12 @@ void FighterSystem::receive(const Message& m) {
 	case M_ROUND_OVER_: onRoundOver(); break;
 	case M_COLLISION_FIGHTER_ASTEROID:onCollision_FighterAsteroid(); break;
 	case M_PAUSE: active_ = false; break;
+	case M_COLLISION_POWERUP1:
+		if (!m.f.pepe) {
+			vidainfinita = true;
+			max = sdlutils().currRealTime()+5000;
+		}
+		break;
 	default:
 		break;
 	}
@@ -58,6 +64,10 @@ void FighterSystem::update() {
 			move(fighter2);
 	}
 	else {
+		if (vidainfinita && sdlutils().currRealTime() > max) {
+			vidainfinita = false;
+			max = sdlutils().currRealTime() + 5000;
+		}
 		move(fighter);
 	}
 	
@@ -161,10 +171,13 @@ void FighterSystem::move(Entity* f) {
 	// un asteroide. Poner el caza en el centro con velocidad (0,0) y rotación 0. No
 	// hace falta desactivar la entidad (no dibujarla si el juego está parado).
 void FighterSystem::onCollision_FighterAsteroid() {
-	Transform* trans_player = mngr_->getComponent<Transform>(fighter);
-	trans_player->setPos({ WIN_WIDTH / 2, WIN_HEIGHT / 2 });
-	trans_player->setVel({ 0,0 });
-	trans_player->setR(0);
+	if (!vidainfinita) {
+		Transform* trans_player = mngr_->getComponent<Transform>(fighter);
+		trans_player->setPos({ WIN_WIDTH / 2, WIN_HEIGHT / 2 });
+		trans_player->setVel({ 0,0 });
+		trans_player->setR(0);
+	}
+	
 }
 // Para gestionar el mensaje de que ha acabado una ronda. Desactivar el sistema.
 void FighterSystem::onRoundOver() {
